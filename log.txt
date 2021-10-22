@@ -1,0 +1,75 @@
+**PART 2**
+Guys, this series was made a while ago. You want to "npm install" all of your dependencies. Do not do what I did here and add them to the package.json. That was a mistake to do it that way.
+
+Yeah exactly! So what you should do is go back to your command terminal and run: 
+    npm install express (Hit Enter and wait for this to install)
+    npm install mongoose (Hit Enter and wait for this to install)
+    npm install bcryptjs (Hit Enter and wait for this to install)
+
+and so on and so on for all the dependencies...
+Once you're done installing all the dependencies, you will find them all in your package-lock.json file!
+
+**PART 4**
+passport.json
+    ```
+    const JwtStrategy = require('passport-jwt').Strategy;
+    const ExtractJwt = require('passport-jwt').ExtractJwt;
+    const User = require('../models/user');
+    const config = require('../config/database')
+
+    module.exports = function(passport) {
+        let opts = {};
+        opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt');
+        opts.secretOrKey = config.secret;
+        passport.use(new JwtStrategy(opts, (jwt_payload, done) => {
+            User.getUserById(jwt_payload.data._id, (err, user) => {
+                if (err) {
+                    return done(err, false);
+                }
+                if (user) {
+                    return done(null, user);
+                } else {
+                    return done(null, false);
+                    // or you could create a new account
+                }
+
+            });
+
+        }));
+    }
+    ```
+
+err : Cannot read property 'passport' of undefined     at SessionStrategy.authenticate
+    ---> fix session add this line
+    npm install express-session
+    app.js
+    ``` 
+    const session = require("express-session");
+    app.use(session({secret: "secret"}))
+    ```
+
+error: express-session deprecated
+    ---> fix by edit this line
+    ``` 
+    app.use(session({
+        secret: cookie_secret,
+        resave: true,
+        saveUninitialized: true
+    }));
+    ```
+Error: Expected "payload" to be a plain object. at validate (D:\Y3T1\04_web_programing\mini_project\meanauthapp\node_modules\jsonwebtoken\sign.js:40:11)
+    --> fix by edit add {} for user => {user}
+    users.js
+    ```
+                if (isMatch) {
+                    const token = jwt.sign({ user }, config.secret, {
+                        expiresIn: 3600 // 1 hr
+                    })
+    ```
+Error : Unauthorized in postman from checking jwt token
+    --> fix by edit passport.js
+    ```
+    opts.jwtFromRequest = ExtractJwt.fromAuthHeaderWithScheme('jwt'); 
+    change to jwt_payload.user._id
+    ```
+
