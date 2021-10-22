@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidateService } from '../../services/validate.service';
+import { AuthService } from 'src/app/services/auth.service'; //
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,17 +10,21 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  name!: String;
-  username!: String;
-  email!: String;
-  password!: String;
+  name: String ="";
+  username: String="";
+  email: String="";
+  password: String="";
 
-  constructor(private validateService: ValidateService) { }
+  constructor(
+    private validateService: ValidateService,
+    private authService: AuthService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
-  onRegisterSubmit(): false | undefined {
+  onRegisterSubmit() {
     const user = {
       name: this.name,
       email: this.email,
@@ -44,8 +50,27 @@ export class RegisterComponent implements OnInit {
         text: 'Please use a valid email'
       });
       return false;
-    } else {
-      return undefined;
     }
+    
+
+    // register user
+    this.authService.registerUser(user).subscribe(data => {
+      if ((data as any).success ) {
+        Swal.fire({
+          icon: 'success',
+          text: 'Register Success'
+        });
+        console.log("Register Success")
+        this.router.navigate(['/login'])
+      } else {
+        Swal.fire({
+          icon: 'error',
+          text: 'Something went wrong'
+        });
+        this.router.navigate(['/register'])
+
+      }
+    })
+    return;
   }
 }

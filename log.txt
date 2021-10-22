@@ -91,8 +91,20 @@ Err : Not all code paths return a value.
     return undefined; // what the f is happanning????
 
 **PART  7**
+For people doing this in 2021 in auth.service.ts the http stuff changed yet again, now it's:
+    import { HttpClient, HttpHeaders } from '@angular/common/http';
+    import { map } from "rxjs/operators";
+
+Err : pipe(map((res: any) => res.json));
+
+You also need to go into app.module.ts and import:
+import { HttpClientModule } from '@angular/common/http';
+then add it to the imports:[] inside @NgModule
+
 install rxjs
     --> npm install rxjs
+    --> npm install --save rxjs-compat 
+    
 Err : 'map' does not exist on type Observable
     Operator chaining has been transitioned to the use of .pipe() in RXJS v6, you should follow the recommended migration path for RXJS. Additionally, the catch operator has been renamed to catchError.
     REF : https://github.com/webmaxru/pwa-workshop-angular/issues/2
