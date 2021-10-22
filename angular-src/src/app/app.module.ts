@@ -13,6 +13,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { ValidateService } from './services/validate.service';
+import { AlertmsgComponent } from './components/alertmsg/alertmsg.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -31,7 +32,8 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    AlertmsgComponent
   ],
   imports: [
     BrowserModule,
