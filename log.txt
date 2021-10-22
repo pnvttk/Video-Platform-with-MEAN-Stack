@@ -104,7 +104,7 @@ then add it to the imports:[] inside @NgModule
 install rxjs
     --> npm install rxjs
     --> npm install --save rxjs-compat 
-    
+
 Err : 'map' does not exist on type Observable
     Operator chaining has been transitioned to the use of .pipe() in RXJS v6, you should follow the recommended migration path for RXJS. Additionally, the catch operator has been renamed to catchError.
     REF : https://github.com/webmaxru/pwa-workshop-angular/issues/2
@@ -120,3 +120,48 @@ Err : Property 'success' does not exist on type 'Object'.
     (data as any).msg 
     (data as any).user  
     instead of data.success/data.msg/data.user
+
+**PART 8**
+26.08.2021
+in case you face outdated materials or undefined objects do the following code!
+
+In auth.service.ts
+
+authenticateUser(user: any): Observable<any> {
+    let headers = new HttpHeaders();
+    headers.append('Content-Type','application/json');
+    return this.http.post<any>('http://localhost:3000/users/authenticate',user);
+  }
+
+  storeUserData(token: any, user: any) {
+    localStorage.setItem('id_token',token);
+    localStorage.setItem('user',JSON.stringify(user));
+    this.authToken = token;
+    this.user = user;
+  }
+
+And in login.component.ts:
+
+this.authService.authenticateUser(user).subscribe(data => {
+      if((data as any).success) {
+        this.authService.storeUserData((data as any).token,(data as any).user);
+        this.flashMessage.show('You are now logged in', {cssClass: 'alert-success', timeout: 5000});
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.flashMessage.show((data as any).msg, {cssClass: 'alert-danger', timeout: 5000});
+        this.router.navigate(['/login']);
+      }
+    });
+
+if getting error on 
+    data.success
+    data.msg
+    data.token
+    data.user     -->     property does not exist on type object...
+
+    simply replace as following
+    (data as any).msg
+    (data as any).token
+    (data as any).user
+    (data as any).success
+this is basically because u r using version 6.x.x or higher...

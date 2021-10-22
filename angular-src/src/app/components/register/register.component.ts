@@ -55,7 +55,7 @@ export class RegisterComponent implements OnInit {
 
     // register user
     this.authService.registerUser(user).subscribe(data => {
-      if ((data as any).success ) {
+      if ((data as any).success) {
         Swal.fire({
           icon: 'success',
           text: 'Register Success'
@@ -63,12 +63,17 @@ export class RegisterComponent implements OnInit {
         console.log("Register Success")
         this.router.navigate(['/login'])
       } else {
-        Swal.fire({
+        // Swal.fire({
+        //   icon: 'error',
+        //   text: 'Something went wrong'
+        // });
+        // this.router.navigate(['/register'])
+        Swal.mixin({
           icon: 'error',
-          text: 'Something went wrong'
-        });
-        this.router.navigate(['/register'])
+          
 
+        })
+        this.router.navigate(['/register'])
       }
     })
     return;
