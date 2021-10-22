@@ -89,3 +89,22 @@ Err : Parameter 'user' implicitly has an 'any' type.ts
 Err : Not all code paths return a value.
     --> add
     return undefined; // what the f is happanning????
+
+**PART  7**
+install rxjs
+    --> npm install rxjs
+Err : 'map' does not exist on type Observable
+    Operator chaining has been transitioned to the use of .pipe() in RXJS v6, you should follow the recommended migration path for RXJS. Additionally, the catch operator has been renamed to catchError.
+    REF : https://github.com/webmaxru/pwa-workshop-angular/issues/2
+Err : Property 'json' does not exist on type 'Object'
+    For future visitors: In the new HttpClient (Angular 4.3+), the response object is JSON by default, so you don't need to do response.json().data anymore. Just use response directly.
+Err : Property 'success' does not exist on type 'Object'.
+    For anyone getting:
+    error TS2339: Property 'success' does not exist on type 'Object'. 
+    error TS2339: Property 'msg' does not exist on type 'Object'.
+    error TS2339: Property 'user' does not exist on type 'Object'.
+    Use  --- >       
+    (data as any).success 
+    (data as any).msg 
+    (data as any).user  
+    instead of data.success/data.msg/data.user
