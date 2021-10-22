@@ -73,3 +73,19 @@ Error : Unauthorized in postman from checking jwt token
     change to jwt_payload.user._id
     ```
 
+**PART 5**
+Change Outputpath to ../public
+becarful of bootstrap and navbar 
+Also for those of you watching in 2020:
+The HttpModule for the Angular import is deprecated you should now be using import { HttpClientModule} from '@angular/common/http';
+https://angular.io/guide/deprecations
+
+**PART 6**
+Err : Property 'name' has no initializer and is not definitely assigned in the constructor.ts(2564)
+    --> undefined name!
+Err : Parameter 'user' implicitly has an 'any' type.ts
+    --> edit to
+    user:any
+Err : Not all code paths return a value.
+    --> add
+    return undefined; // what the f is happanning????
