@@ -179,3 +179,62 @@ Err : user object
         return false;
 
 BEFORE USE UNAUTH_JWT
+
+intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>;
+    --> check rxjs version
+    npm list rxjs
+    npm install rxjs@version
+
+MASSIVE Error
+    SHORT WAY ( standalone ):
+    - npm install @auth0/angular-jwt
+
+    - import { JwtHelperService } from '@auth0/angular-jwt'; in auth.service.ts file
+    -  do not pass it into constructor
+    - in loggedIn() function: 
+            loggedIn(){
+                    this.loadToken();
+                    const helper = new JwtHelperService();
+                    return helper.isTokenExpired(this.authToken); //False if Token is good, True if not good
+            }
+    - change authService to public in navbar.component.ts
+    - switch around the "!" symbol when calling authService.loggedIn()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+    LONGER WAY ( injection ):
+    - npm install @auth0/angular-jwt
+    ------Changes to auth.service.ts
+    To use isTokenExpired, you must type: import { JwtHelperService } from '@auth0/angular-jwt'; at the top of your auth.service.ts file and inject it into the constructor as so: public jwtHelper: JwtHelperService
+
+
+    And in your loggedIn() function:
+            loggedIn(){
+                    return this.jwtHelper.isTokenExpired();
+            }
+
+
+    ------Changes to app.module.ts
+    You must import the JwtModule as so: import { JwtModule } from '@auth0/angular-jwt';
+
+
+    And create an export function which retrieves the token for you: 
+            export function tokenGetter(){ 
+                    return localStorage.getItem("id_token");
+            }
+    In imports section, add:
+            JwtModule.forRoot({
+                    config: {
+                            tokenGetter: tokenGetter
+                    }
+            })
+
+
+    ------- navbar.component.ts
+    - inject authService as public into the constructor
+
+
+    ------- navbar.component.html
+    - switch around the "!" symbol when calling authService.loggedIn()
+
+
