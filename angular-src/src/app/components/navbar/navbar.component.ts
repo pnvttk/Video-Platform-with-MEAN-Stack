@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 export class NavbarComponent implements OnInit {
 
   constructor(
-    private authService: AuthService,
+    public authService: AuthService,
     private router:Router
   ) { }
 

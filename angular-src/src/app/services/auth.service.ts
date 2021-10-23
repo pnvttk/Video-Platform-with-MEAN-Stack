@@ -1,3 +1,4 @@
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from "rxjs/operators";
@@ -11,6 +12,7 @@ export class AuthService {
   user: any;
   
   constructor(
+    public jwtHelper: JwtHelperService,
     private http:HttpClient
   ) { }
 
@@ -57,4 +59,18 @@ export class AuthService {
     this.user = null;
     localStorage.clear();
   }
+  loggedIn() {
+    // this.loadToken();
+    // const helper = new JwtHelperService();
+    // return helper.isTokenExpired(this.authToken); //False if Token is good, True if not good
+    // console.log(this.jwtHelper.isTokenExpired())
+    return this.jwtHelper.isTokenExpired();
+  }
+
+  // v2
+  // loggedIn(){
+  //   if(this.authToken != null){return true;}
+  //   else{return false;}
+  // }
+
 }

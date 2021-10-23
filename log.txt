@@ -187,7 +187,9 @@ intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<an
 
 MASSIVE Error
     SHORT WAY ( standalone ):
+    ** INSTALL IN THE ANGULAR-SRC !!! IF NOT IT WILL ERROR
     - npm install @auth0/angular-jwt
+    
 
     - import { JwtHelperService } from '@auth0/angular-jwt'; in auth.service.ts file
     -  do not pass it into constructor
@@ -237,4 +239,4 @@ MASSIVE Error
     ------- navbar.component.html
     - switch around the "!" symbol when calling authService.loggedIn()
 
-
+Skip AuthGuard Protected
