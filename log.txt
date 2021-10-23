@@ -167,3 +167,15 @@ if getting error on
 this is basically because u r using version 6.x.x or higher...
 
 **PART 9**
+Err : user object
+    --> Fix
+    this.authService.getProfile().subscribe((profile:any) => {
+        this.user = profile.user;
+        console.log("this"+this.user)
+        console.log("profile"+profile.user)
+        });
+        (err: any) => {
+        console.log(err)
+        return false;
+
+BEFORE USE UNAUTH_JWT
