@@ -22,6 +22,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ValidateService } from './services/validate.service';
 import { AlertmsgComponent } from './components/alertmsg/alertmsg.component';
 import { AuthService } from './services/auth.service'; //
+import { VideoRequestModule } from './video-request-get/video-request-get.module';
+import { VideoRequestGetComponent } from './video-request-get/video-request-get/video-request-get.component';
 // import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     path: 'profile', component: ProfileComponent,
     // canActivate: [AuthGuard]
   },
+  { path: 'video', component: VideoRequestGetComponent}
   
 ]
 
@@ -49,6 +52,7 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     AlertmsgComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -57,6 +61,7 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    VideoRequestModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter

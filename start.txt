@@ -1,0 +1,4 @@
+main terminal
+    nodemon  
+src pj
+    ng serve -o

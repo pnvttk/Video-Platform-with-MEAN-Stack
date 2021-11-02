@@ -1,0 +1,12 @@
+<div *ngFor="let video of videoList">
+    <div>{{video.title}}</div>
+    <iframe 
+        [src]="video.url | safe"
+        allowfullscreen
+
+
+    ></iframe>
+    <div>{{video.description}}</div>
+    <img [src]="video.img_url" width="400">
+</div>
+
