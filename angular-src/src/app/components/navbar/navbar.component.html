@@ -6,17 +6,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <!-- <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                     <a class="nav-link active" [routerLink]="['/']">Home</a>
-                </li>
+                </li> -->
                 <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                     <a class="nav-link active" [routerLink]="['/video']">Video</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']">
+                <!-- <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']">
                     <a class="nav-link active" [routerLink]="['/dashboard']">Dashboard</a>
-                </li>
+                </li> -->
                 <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']">
                     <a class="nav-link active" [routerLink]="['/profile']">Profile</a>
                 </li>

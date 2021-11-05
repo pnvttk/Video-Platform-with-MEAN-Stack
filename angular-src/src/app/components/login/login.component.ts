@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
           text: 'Login Success'
           // text: Object.values(data)[0] // select value from object 
         });
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/video'])
       } else {
         const mydata = data
         Swal.fire({

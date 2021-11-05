@@ -11,17 +11,27 @@ export class VideoRequestGetComponent implements OnInit {
 
   videoList: Video[] = [];
 
-  PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
+  // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
+  MONGO_API = 'http://localhost:9000'
   
   constructor(
     private http: HttpClient
   ) { }
 
   ngOnInit(): void {
+    //? old php
+    /*
     this.http.get<Video[]>(this.PHP_API + '/videos/read.php').subscribe(response => {
       console.log('response', response)
       this.videoList = response
     })
+    */
+    this.http.get<Video[]>(this.MONGO_API + '/videos').subscribe(response => {
+      console.log('response', response)
+      this.videoList = response
+    })
   }
+
+
 
 }
