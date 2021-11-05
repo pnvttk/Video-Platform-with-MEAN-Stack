@@ -1,4 +1,43 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav>
+    <div class="b-example-divider"></div>
+
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+          </a> -->
+          <a class="navbar-brand text-white" href="#">Video Course</a>
+
+    
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a href="#" class="nav-link px-2 text-white">Home</a>
+            </li>
+            <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link active text-white" [routerLink]="['/video']">Video</a>
+            </li>
+          </ul>
+    
+          <!-- <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
+          </form> -->
+    
+          <div class="text-end">
+            <!-- ? When Not login -->
+            <button type="button" class="btn btn-outline-light me-2" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/login']">Login</button>
+            <button type="button" class="btn btn-warning" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/register']">Sign-up</button>
+            <!-- ? When login -->
+            <button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']">Profile</button>
+            <button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.loggedIn()" (click)="onLogoutClick()" href="#">Log-out</button>
+          </div>
+        </div>
+      </div>
+    </header>      
+</nav>
+
+<!-- ? old version -->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">MEAN WITH PHP API</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -6,17 +45,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <!-- <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-                    <a class="nav-link active" [routerLink]="['/']">Home</a>
-                </li> -->
+                <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a href="#" class="nav-link px-2 text-secondary">Home</a>
+                </li>
                 <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                     <a class="nav-link active" [routerLink]="['/video']">Video</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                <!-- <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']">
+                <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']">
                     <a class="nav-link active" [routerLink]="['/dashboard']">Dashboard</a>
-                </li> -->
+                </li>
                 <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']">
                     <a class="nav-link active" [routerLink]="['/profile']">Profile</a>
                 </li>
@@ -32,4 +71,4 @@
             </ul>
         </div>
     </div>
-</nav>
+</nav> -->

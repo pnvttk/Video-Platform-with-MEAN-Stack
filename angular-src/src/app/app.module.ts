@@ -26,6 +26,12 @@ import { VideoRequestModule } from './video-request-get/video-request-get.module
 import { VideoRequestGetComponent } from './video-request-get/video-request-get/video-request-get.component';
 // import { AuthGuard } from './guards/auth.guard';
 
+//* ui
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { AccordionModule } from 'primeng/accordion';
+import { InputTextModule } from 'primeng/inputtext';
+import {KnobModule} from 'primeng/knob';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
@@ -62,6 +68,10 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     HttpClientModule,
     VideoRequestModule,
+    AccordionModule,
+    InputTextModule,
+    KnobModule,
+    FontAwesomeModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter

@@ -1,14 +1,45 @@
-<br>
-<h2 class="page-header">Login</h2>
+<main class="form-signin text-center mt-5">
+    <form (submit)="onLoginSubmit()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+    </svg>
+    <h1 class="h2 mb-3 ">Please sign in</h1>
+    <div class="container text-center">
+        <div class="d-flex justify-content-center">
+            <div class="form-floating mt-3 col-3  ">
+                <input type="text" size="100" class="form-control " [(ngModel)]="username" name="username" placeholder="username">
+                <label for="floatingInput"> Username</label>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <div class="form-floating mt-3 col-3 ">
+                <input type="password" class="form-control " [(ngModel)]="password" name="password" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
+        </div>    
+
+        <button class="btn btn-lg btn-success mt-3" type="submit">Sign-in</button>
+    </div>
+
+</form>
+</main>
+
+<!-- ? old ui -->
+<!-- <h2 class="page-header mt-3">Login</h2>
+
 <form (submit)="onLoginSubmit()">
     <div class="form-group">
         <label>Username</label>
-        <input type="text" class="form-control" [(ngModel)]="username" name="username">
+        <input type="text" class="form-control" [(ngModel)]="username" name="username" placeholder="Password">
     </div>
+    <br>
     <div class="form-group">
         <label>Password</label>
-        <input type="password" class="form-control" [(ngModel)]="password" name="password">
+        <input type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password">
     </div>
     <br>
     <input type="submit" class="btn btn-primary" value="Login">
-</form>
+    
+</form> -->
+  
