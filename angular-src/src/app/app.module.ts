@@ -31,6 +31,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AccordionModule } from 'primeng/accordion';
 import { InputTextModule } from 'primeng/inputtext';
 import {KnobModule} from 'primeng/knob';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -72,11 +74,13 @@ const appRoutes: Routes = [
     InputTextModule,
     KnobModule,
     FontAwesomeModule,
+    NgbModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter
       }
-})
+}),
+    NgbModule
 
   ],
   providers: [ValidateService, AuthService,

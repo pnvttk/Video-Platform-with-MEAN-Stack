@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { VideoRequestGetComponent } from './video-request-get/video-request-get.component';
 import { SafePipe } from './video-request-get/safe.pipe';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -11,7 +13,8 @@ import { SafePipe } from './video-request-get/safe.pipe';
     SafePipe
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbModule
   ],
   exports: [VideoRequestGetComponent]
 })

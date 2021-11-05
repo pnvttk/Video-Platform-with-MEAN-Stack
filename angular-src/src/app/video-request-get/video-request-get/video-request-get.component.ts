@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Video } from './video-request-get';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-video-request-get',
@@ -15,7 +16,8 @@ export class VideoRequestGetComponent implements OnInit {
   MONGO_API = 'http://localhost:9000'
   
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -29,9 +31,8 @@ export class VideoRequestGetComponent implements OnInit {
     this.http.get<Video[]>(this.MONGO_API + '/videos').subscribe(response => {
       console.log('response', response)
       this.videoList = response
-    })
+    })   
   }
-
 
 
 }
