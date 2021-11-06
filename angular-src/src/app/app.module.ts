@@ -34,6 +34,10 @@ import {KnobModule} from 'primeng/knob';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { SafePipe } from './video-request-get/video-request-get/safe.pipe';
+import { VideoDetailComponent } from './video-request-get/video-request-get/video-detail/video-detail.component';
+import { SafeUrlPipe } from './video-request-get/video-request-get/video-detail/safe-url.pipe';
+import { VideoDetailModule } from './video-request-get/video-request-get/video-detail/video-detail.module';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -61,6 +65,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     ProfileComponent,
     AlertmsgComponent,
+    // VideoDetailComponent,
+    // SafeUrlPipe
     
   ],
   imports: [
@@ -77,6 +83,7 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     NgbModule,
     RouterModule,
+    // VideoDetailModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter

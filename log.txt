@@ -246,3 +246,6 @@ Error ERROR Error: Uncaught (in promise): NullInjectorError: R3InjectorError(Reg
 
 Error : Can't bind to 'routerLink' since it isn't a known property
     ref : https://stackoverflow.com/questions/42035387/cant-bind-to-routerlink-since-it-isnt-a-known-property
+
+Error : pipe name not found
+    ref : https://www.youtube.com/watch?v=maI2u6Sxk9M

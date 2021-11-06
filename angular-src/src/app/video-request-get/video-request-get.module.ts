@@ -6,11 +6,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 import { RouterModule, Routes } from '@angular/router';
+import { VideoDetailComponent } from './video-request-get/video-detail/video-detail.component';
 
 
 @NgModule({
   declarations: [
     VideoRequestGetComponent,
+    // VideoDetailComponent
     // SafePipe
   ],
   imports: [
