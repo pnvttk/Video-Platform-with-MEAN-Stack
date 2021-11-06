@@ -28,6 +28,7 @@ export class VideoRequestGetComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
     //? old php
     /*
     this.http.get<Video[]>(this.PHP_API + '/videos/read.php').subscribe(response => {
@@ -35,6 +36,7 @@ export class VideoRequestGetComponent implements OnInit {
       this.videoList = response
     })
     */
+    
     this.http.get<Video[]>(this.MONGO_API + '/videos').subscribe(response => {
       console.log('response', response)
       this.videoList = response
@@ -49,6 +51,11 @@ export class VideoRequestGetComponent implements OnInit {
     let API_URL = `${this.MONGO_API}/video/${id}`
     console.log("this is GetVideo(id) " + API_URL)
     return this.http.get(API_URL, { headers: this.httpHeaders})
+  }
+
+  AddVideo(data: Video): Observable<any>{
+    let API_URL = `${this.MONGO_API}/add-video`
+    return this.http.post(API_URL, data)
   }
 
   scrollToTop() {

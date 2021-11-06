@@ -1,16 +1,14 @@
 <main>
   <div class="container-fluid mt-3">
     <!-- ? use "?" to clear cannot read property "title, url" of undefined -->
-    <!-- * this is iframe 100% -->
+    <!-- * this is iframe 100% fit to screen-->
     <!-- <body style="margin:0px;padding:0px;overflow:hidden">
         <iframe [src]="data?.url | safeurl" frameborder="0" style="overflow:hidden;overflow-x:hidden;overflow-y:hidden;height:100%;width:100%;position:absolute;top:0px;left:0px;right:0px;bottom:0px" height="100%" width="100%"></iframe>
     </body> -->
     <!-- * Wrapper Iframe ref : https://stackoverflow.com/questions/17838607/making-an-iframe-responsive -->
     <div class="titleS">
       <a [routerLink]="['/video']" class="btn btn-warning stretched-link mb-2 shadow-sm">Go Back</a>
-      
       <h2>{{data?.title}}</h2>
-
     </div>
 
     <div class="wrapper mt-3 shadow">
@@ -26,15 +24,13 @@
   </div>
 </main>
 
-
-<footer class="text-muted py-5">
-  <div class="container">
-    <p class="float-end mb-1">
-      <a href="/video">Back to top</a>
-    </p>
-    <p class="mb-1">Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p class="mb-0">New to Bootstrap? 
-        <a href="/">Visit the homepage</a> or read our 
-      <a href="/video">getting started guide</a>.</p>
-  </div>
-</footer>
+<div class="container-fluid">
+  <footer class="text-muted py-3 mt-6">
+    <div class="container">
+      <p class="float-end mb-1">
+        <!-- <a href="/video">Back to top</a> -->
+      </p>
+      <p class="mb-1">MEAN Stack Project made by Pannavach.</p>
+    </div>
+  </footer>
+</div>

@@ -29,18 +29,21 @@ export class AuthService {
   }
 
   getProfile() {
-    // let headers = new HttpHeaders() // old
+
+    // let headers = new HttpHeaders() //? old
     this.loadToken();
+
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.authToken
     });
+
+    //? not use
     // const headers = new HttpHeaders({
     //   'Content-Type': 'application/json',
     //   'Authorization': this.authToken
     // });
 
-    
     // headers.append('Authorizaion', this.authToken);
     // headers.append('Content-Type', 'application/json')
     
