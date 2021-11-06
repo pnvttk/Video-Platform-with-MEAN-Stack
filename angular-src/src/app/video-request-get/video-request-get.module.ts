@@ -8,17 +8,19 @@ import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { VideoDetailComponent } from './video-request-get/video-detail/video-detail.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddVideoComponent } from './video-request-get/add-video/add-video.component';
 
 
 @NgModule({
   declarations: [
     VideoRequestGetComponent,
+    AddVideoComponent,
     // VideoDetailComponent
     // SafePipe
   ],
@@ -28,6 +30,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     Ng2SearchPipeModule,
     FormsModule,
+    ReactiveFormsModule ,
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
