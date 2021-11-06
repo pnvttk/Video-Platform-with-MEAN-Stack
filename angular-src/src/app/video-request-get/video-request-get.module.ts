@@ -15,7 +15,7 @@ import { MatSelectModule } from '@angular/material/select';
 import {MatChipsModule} from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddVideoComponent } from './video-request-get/add-video/add-video.component';
-
+import {InputTextModule} from 'primeng/inputtext';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,8 @@ import { AddVideoComponent } from './video-request-get/add-video/add-video.compo
     MatInputModule,
     MatSelectModule,
     MatChipsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    InputTextModule
 
   ],
   exports: [VideoRequestGetComponent]

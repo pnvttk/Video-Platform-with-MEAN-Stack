@@ -44,3 +44,6 @@ color: inherit;
     height: 20px;
     overflow: hidden;
 }
+.videoDes{
+    white-space: pre-wrap;
+}

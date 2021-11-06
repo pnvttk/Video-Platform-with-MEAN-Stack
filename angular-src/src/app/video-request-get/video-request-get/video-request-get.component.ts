@@ -13,6 +13,10 @@ export class VideoRequestGetComponent implements OnInit {
 
   videoList: Video[] = [];
 
+  mystring = 'I want this to be two lines. \\n Two lines would be great'
+
+  testP = this.mystring.replace(/\\n/g, '\n')
+
   searchText: any;
 
   // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
@@ -41,7 +45,7 @@ export class VideoRequestGetComponent implements OnInit {
     this.http.get<Video[]>(this.MONGO_API + '/videos').subscribe(response => {
       console.log('response', response)
       this.videoList = response
-    })   
+    })
   }
 
   GetVideos() {
