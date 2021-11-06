@@ -240,3 +240,9 @@ MASSIVE Error
     - switch around the "!" symbol when calling authService.loggedIn()
 
 Skip AuthGuard Protected
+
+Error ERROR Error: Uncaught (in promise): NullInjectorError: R3InjectorError(RegisterPageModule)[AccessProviders -> AccessProviders]
+    Ref : https://stackoverflow.com/questions/63984156/error-error-uncaught-in-promise-nullinjectorerror-r3injectorerrorregisterp
+
+Error : Can't bind to 'routerLink' since it isn't a known property
+    ref : https://stackoverflow.com/questions/42035387/cant-bind-to-routerlink-since-it-isnt-a-known-property

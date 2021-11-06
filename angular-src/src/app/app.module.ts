@@ -4,7 +4,7 @@ export function tokenGetter(){
 }
 
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, DomSanitizer } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -33,6 +33,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import {KnobModule} from 'primeng/knob';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { SafePipe } from './video-request-get/video-request-get/safe.pipe';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -75,6 +76,7 @@ const appRoutes: Routes = [
     KnobModule,
     FontAwesomeModule,
     NgbModule,
+    RouterModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: tokenGetter
@@ -83,7 +85,7 @@ const appRoutes: Routes = [
     NgbModule
 
   ],
-  providers: [ValidateService, AuthService,
+  providers: [ValidateService, AuthService,VideoRequestGetComponent
     // AuthGuard
   ],
   bootstrap: [AppComponent]

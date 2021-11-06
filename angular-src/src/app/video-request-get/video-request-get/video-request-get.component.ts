@@ -1,7 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Video } from './video-request-get';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-video-request-get',
@@ -14,10 +15,14 @@ export class VideoRequestGetComponent implements OnInit {
 
   // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
   MONGO_API = 'http://localhost:9000'
+
+  // Http header
+  httpHeaders = new HttpHeaders().set('Conten-Type', 'application/json')
   
   constructor(
     private http: HttpClient,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    // private httpHeaders : HttpHeaders
   ) { }
 
   ngOnInit(): void {
@@ -34,5 +39,16 @@ export class VideoRequestGetComponent implements OnInit {
     })   
   }
 
+  GetVideos() {
+    return this.http.get(`${this.MONGO_API}`)
+  }
+
+  GetVideo(id: any): Observable<any>{
+    let API_URL = `${this.MONGO_API}/video/${id}`
+    console.log("this is GetVideo(id) " + API_URL)
+    return this.http.get(API_URL, { headers: this.httpHeaders})
+  }
 
 }
+
+

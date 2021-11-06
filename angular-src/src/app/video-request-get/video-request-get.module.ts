@@ -5,16 +5,18 @@ import { SafePipe } from './video-request-get/safe.pipe';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
+import { RouterModule, Routes } from '@angular/router';
 
 
 @NgModule({
   declarations: [
     VideoRequestGetComponent,
-    SafePipe
+    // SafePipe
   ],
   imports: [
     CommonModule,
-    NgbModule
+    NgbModule,
+    RouterModule
   ],
   exports: [VideoRequestGetComponent]
 })
