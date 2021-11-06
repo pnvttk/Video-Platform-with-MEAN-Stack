@@ -28,6 +28,8 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
+ 
+
     this.authService.authenticateUser(user).subscribe(data => {
       console.log(data) // check auth of user
       if ((data as any).success) {
@@ -36,7 +38,8 @@ export class LoginComponent implements OnInit {
         Swal.fire({
           icon: 'success',
           text: 'Login Success',
-          confirmButtonColor: '#249A00'
+          confirmButtonColor: '#249A00',
+          
           // text: Object.values(data)[0] // select value from object 
         });
         this.router.navigate(['/video'])

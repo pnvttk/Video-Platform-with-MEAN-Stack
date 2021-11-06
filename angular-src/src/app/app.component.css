@@ -2,3 +2,18 @@
     height: calc(100vh - 95px) !important;
     width: 100% !important
   }
+  .swal2-popup {
+    font-size: 2rem;
+    }
+    .swal-height {
+        height: 600px;
+        width: 600px;
+    }
+    
+    @media (max-width: 800px) {
+      .swal-height {
+        height: 300px;
+        width: 300px;
+    }
+    }
+    

@@ -1,7 +1,5 @@
-<nav>
-    <div class="b-example-divider"></div>
-
-    <header class="p-3 bg-dark text-white">
+<nav class="navbar-expand-lg navbar-dark bg-dark">
+    <header class="p-3 text-white">
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
           <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -28,8 +26,8 @@
             <button type="button" class="btn btn-outline-light me-2" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/login']">Login</button>
             <button type="button" class="btn btn-warning" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/register']">Sign-up</button>
             <!-- ? When login -->
-            <button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']">Profile</button>
-            <button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.loggedIn()" (click)="onLogoutClick()" href="#">Log-out</button>
+            <button type="button" class="btn btn-light me-2" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']">Profile</button>
+            <button type="button" class="btn btn-danger me-2" *ngIf="!authService.loggedIn()" (click)="onLogoutClick()" href="#">Log-out</button>
           </div>
         </div>
       </div>
