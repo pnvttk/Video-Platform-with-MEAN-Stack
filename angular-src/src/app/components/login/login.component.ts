@@ -35,7 +35,8 @@ export class LoginComponent implements OnInit {
         const mydata = data
         Swal.fire({
           icon: 'success',
-          text: 'Login Success'
+          text: 'Login Success',
+          confirmButtonColor: '#249A00'
           // text: Object.values(data)[0] // select value from object 
         });
         this.router.navigate(['/video'])
@@ -43,6 +44,7 @@ export class LoginComponent implements OnInit {
         const mydata = data
         Swal.fire({
           icon: 'error',
+          confirmButtonColor: '#FF0000',
           text: Object.values(data)[1] // select value from object 
         });
         this.router.navigate(['/login'])

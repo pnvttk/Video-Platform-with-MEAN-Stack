@@ -1,11 +1,16 @@
 <main>
     <!--* header -->
-    <section class="mt-3 py-5 text-center container bg-light">
+    <section class="mt-3 py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
           <h1 class="fw-light">Video Course</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it entirely.</p>
-          <p>
+
+          <form>
+            <div class="form-group">
+              <input type="text" name="searchsText" placeholder="Search" [(ngModel)]="searchText">
+            </div>
+          </form>
         </div>
       </div>
     </section>
@@ -21,7 +26,7 @@
       <!-- ? ref : https://getbootstrap.com/docs/5.0/helpers/stretched-link/#identifying-the-containing-block  -->
       <!-- ? ref2 : https://stackoverflow.com/questions/20796596/how-to-align-two-div-tags-horizontally-in-the-same-line-inside-a-main-div-ta/20796642 -->
     <!--* Fetch video -->
-    <div id="sameline" class="album py-3 " *ngFor="let video of videoList">
+    <div id="sameline" class="album py-3 " *ngFor="let video of videoList | filter:searchText">
         <div class="card shadow-lg me-4" >
             <img [src]="video.img_url" width="100%" height="225">
             <div class="card-body" style="width: 25rem;">
@@ -30,8 +35,7 @@
                 <!-- <iframe [src]="video.url | safe" allowfullscreen></iframe> -->
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                        <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/video-detail/'+video._id]" (click)="GetVideo(video._id)">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/video-detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
 
                         <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button> -->
                     </div>

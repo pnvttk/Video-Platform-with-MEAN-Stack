@@ -22,7 +22,9 @@ export class NavbarComponent implements OnInit {
     this.authService.logout();
     Swal.fire({
       icon: 'success',
-      text: 'Logout Success'
+      text: 'Logout Success',
+      confirmButtonColor: '#249A00'
+
     });
     console.log("Logout Success")
     this.router.navigate(['/login'])

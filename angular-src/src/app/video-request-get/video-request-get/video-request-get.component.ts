@@ -13,6 +13,8 @@ export class VideoRequestGetComponent implements OnInit {
 
   videoList: Video[] = [];
 
+  searchText: any;
+
   // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
   MONGO_API = 'http://localhost:9000'
 
@@ -49,6 +51,9 @@ export class VideoRequestGetComponent implements OnInit {
     return this.http.get(API_URL, { headers: this.httpHeaders})
   }
 
+  scrollToTop() {
+    window.scrollTo(0, 0);
+  }
 }
 
 
