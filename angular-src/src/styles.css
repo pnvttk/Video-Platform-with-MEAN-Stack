@@ -1,1 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+.set-iframe {
+    height: calc(100vh-95px) !important;
+    width: 100% !important
+  }

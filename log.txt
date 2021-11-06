@@ -249,3 +249,6 @@ Error : Can't bind to 'routerLink' since it isn't a known property
 
 Error : pipe name not found
     ref : https://www.youtube.com/watch?v=maI2u6Sxk9M
+
+Error : Iframe height not responsive
+    ref : https://stackoverflow.com/questions/17838607/making-an-iframe-responsive

@@ -1,0 +1,4 @@
+.set-iframe {
+    height: calc(100vh - 95px) !important;
+    width: 100% !important
+  }
