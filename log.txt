@@ -256,3 +256,6 @@ Error : Iframe height not responsive
 
 Add : Search filter box
     ref : https://www.youtube.com/watch?v=dIGJuVUiaEI
+
+Add : Read More / Read less
+    ref : https://www.cloudhadoop.com/angular-dynamically-shorten-long-text/

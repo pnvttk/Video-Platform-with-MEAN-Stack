@@ -40,3 +40,7 @@ color: inherit;
     width:100%;
  }
  
+ .limitTextHeight {
+    height: 20px;
+    overflow: hidden;
+}

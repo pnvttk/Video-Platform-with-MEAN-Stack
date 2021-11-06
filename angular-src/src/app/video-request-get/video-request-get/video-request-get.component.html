@@ -25,7 +25,16 @@
             <img [src]="video.img_url" class="responsive">
             <div class="card-body py-3" style="width: 25rem;">
                 <h5>{{video.title}}</h5>
-                <p>{{video.description}}</p>
+
+                <div [ngClass]="{'limitTextHeight': isReadMore}">
+                  <p>{{video.description}}</p>
+                </div>
+                <p class="text-end">
+                  <a (click)="showText()">
+                    {{ isReadMore ? 'Read More': 'Read Less' }}
+                  </a>  
+                </p>
+
                 <!-- <iframe [src]="video.url | safe" allowfullscreen></iframe> -->
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">

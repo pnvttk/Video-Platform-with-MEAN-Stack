@@ -21,6 +21,7 @@ export class VideoRequestGetComponent implements OnInit {
   // Http header
   httpHeaders = new HttpHeaders().set('Conten-Type', 'application/json')
   
+  
   constructor(
     private http: HttpClient,
     private modalService: NgbModal,
@@ -61,6 +62,13 @@ export class VideoRequestGetComponent implements OnInit {
   scrollToTop() {
     window.scrollTo(0, 0);
   }
+
+  isReadMore = true
+
+  showText() {
+     this.isReadMore = !this.isReadMore
+  }
+
 }
 
 
