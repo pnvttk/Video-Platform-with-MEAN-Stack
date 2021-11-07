@@ -7,11 +7,12 @@
     </body> -->
     <!-- * Wrapper Iframe ref : https://stackoverflow.com/questions/17838607/making-an-iframe-responsive -->
     <div class="titleS">
-      <a [routerLink]="['/video']" class="btn btn-warning stretched-link mb-2 shadow-sm">Go Back</a>
+      <button [routerLink]="['/video']" class="btn btn-warning mb-2 shadow-sm">Go Back</button>
       <h2>{{data?.title}}</h2>
     </div>
 
     <div class="wrapper mt-3 shadow">
+      
       <iframe [src]="data?.url | safeurl" frameborder="0" class="responsive-iframe" height="100%" width="100%"></iframe>
     </div>
 
