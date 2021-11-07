@@ -30,12 +30,14 @@
             <!-- <img [src]="video.img_url" width="100%" height="225" > -->
             <img [src]="video.img_url" class="responsive">
             <div class="card-body py-3" style="width: 25rem;">
-                <h5>{{video.title}}</h5>
+                <h4>{{video.title}}</h4>
 
                 <!-- ? slice text -->
-                <div>
-                  {{(readMore) ? video.description : video.description | slice:0:50}}
-                  <span *ngIf="!readMore">...</span>
+                <div class="limitTextHeight mb-2">
+                  <p>
+                    {{(readMore) ? video.description : video.description | slice:0:200}}
+                  </p>
+                  <span *ngIf="!readMore"></span>
                   <!-- <a href="javascript:;" *ngIf="!readMore" (click)="readMore=true">[Read More]</a> -->
                 </div>
 
@@ -52,7 +54,7 @@
                 <!-- <iframe [src]="video.url | safe" allowfullscreen></iframe> -->
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
-                        <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/video-detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary shadow-sm" [routerLink]="['/video-detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
                     </div>
                 </div>
             </div>
