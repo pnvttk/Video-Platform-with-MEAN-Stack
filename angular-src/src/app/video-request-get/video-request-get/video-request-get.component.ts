@@ -65,6 +65,25 @@ export class VideoRequestGetComponent implements OnInit {
     return this.http.post(API_URL, data)
   }
 
+  UpdateVideo(id: any, data: any): Observable<any>{
+    let API_URL = `${this.MONGO_API}/update-video/${id}`
+    return this.http.put(API_URL, data, {headers: this.httpHeaders})
+  }
+
+  DeleteVideo(id: any): Observable<any> {
+    let API_URL = `${this.MONGO_API}/delete-video/${id}`
+    return this.http.delete(API_URL, {headers: this.httpHeaders})
+  }
+
+  delete(id: any, i: any) {
+    console.log(id)
+    if (window.confirm('Are you sure?')) {
+      this.DeleteVideo(id).subscribe((res) => {
+        this.videoList.splice(i, 1)
+      })
+    }
+  }
+
   scrollToTop() {
     window.scrollTo(0, 0);
   }

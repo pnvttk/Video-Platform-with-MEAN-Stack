@@ -25,7 +25,7 @@
       <!-- ? ref : https://getbootstrap.com/docs/5.0/helpers/stretched-link/#identifying-the-containing-block  -->
       <!-- ? ref2 : https://stackoverflow.com/questions/20796596/how-to-align-two-div-tags-horizontally-in-the-same-line-inside-a-main-div-ta/20796642 -->
     <!--* Fetch video -->
-    <div id="sameline" class="album py-3 " *ngFor="let video of videoList | filter:searchText">
+    <div id="sameline" class="album py-3 " *ngFor="let video of videoList | filter:searchText; let i = index">
         <div class="card shadow-lg me-4" >
             <!-- <img [src]="video.img_url" width="100%" height="225" > -->
             <img [src]="video.img_url" class="responsive">
@@ -55,6 +55,9 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary shadow-sm" [routerLink]="['/video-detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
+
+                        <button class="btn btn-danger ms-3" (click)="delete(video._id, i)">Delete</button>
+                        
                     </div>
                 </div>
             </div>
