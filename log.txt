@@ -264,3 +264,14 @@ Error : New line \\n <br>
     ref : https://stackoverflow.com/questions/62686893/new-line-n-does-not-work-in-mongodb-atlas
     https://stackoverflow.com/questions/52220411/typescript-creating-new-lines-in-a-string-using-n
     https://forums.meteor.com/t/how-to-store-and-render-paragraphs-with-line-breaks/6549/9
+
+Error : access Array of Object
+    ref : https://stackoverflow.com/questions/953311/replace-string-in-javascript-array
+        for(var i=0; i < arr.length; i++) {
+        arr[i] = arr[i].replace(/,/g, '');
+        }
+    in this case
+        for (var i = 0; i < this.arrOfobj.length; i++){
+        this.arrOfobj[i].description = this.arrOfobj[i].description.replace(/\\n/g, '<br>\n') //* work
+        }
+
