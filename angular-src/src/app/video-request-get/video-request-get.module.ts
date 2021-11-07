@@ -16,11 +16,13 @@ import {MatChipsModule} from '@angular/material/chips';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddVideoComponent } from './video-request-get/add-video/add-video.component';
 import {InputTextModule} from 'primeng/inputtext';
+import { UpdateComponent } from './video-request-get/update/update.component';
 
 @NgModule({
   declarations: [
     VideoRequestGetComponent,
     AddVideoComponent,
+    UpdateComponent,
     // VideoDetailComponent
     // SafePipe
   ],

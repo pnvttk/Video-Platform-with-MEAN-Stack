@@ -41,6 +41,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AddVideoComponent } from './video-request-get/video-request-get/add-video/add-video.component';
+import { UpdateComponent } from './video-request-get/video-request-get/update/update.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -54,8 +55,9 @@ const appRoutes: Routes = [
     path: 'profile', component: ProfileComponent,
     // canActivate: [AuthGuard]
   },
-  { path: 'video', component: VideoRequestGetComponent },
-  { path: 'add', component: AddVideoComponent}
+  // { path: 'video', component: VideoRequestGetComponent },
+  { path: 'add', component: AddVideoComponent },
+  // { path: 'update', component: UpdateComponent}
   
 ]
 

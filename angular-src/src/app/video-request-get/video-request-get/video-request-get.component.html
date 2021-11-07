@@ -30,7 +30,9 @@
             <!-- <img [src]="video.img_url" width="100%" height="225" > -->
             <img [src]="video.img_url" class="responsive">
             <div class="card-body py-3" style="width: 25rem;">
-                <h4>{{video.title}}</h4>
+                <h3>
+                  <b>{{video.title}}</b>
+                </h3>
 
                 <!-- ? slice text -->
                 <div class="limitTextHeight mb-2">
@@ -55,8 +57,10 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-outline-secondary shadow-sm" [routerLink]="['/video-detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
+                        
+                        <button type="button" class="btn btn-sm btn-outline-warning shadow-sm" [routerLink]="['/update/'+video._id]">Edit</button>
 
-                        <button class="btn btn-danger ms-3" (click)="delete(video._id, i)">Delete</button>
+                        <button class="btn btn-sm btn-outline-danger" (click)="delete(video._id, i)">Delete</button>
                         
                     </div>
                 </div>
