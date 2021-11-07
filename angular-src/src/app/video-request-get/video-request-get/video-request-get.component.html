@@ -32,14 +32,22 @@
             <div class="card-body py-3" style="width: 25rem;">
                 <h5>{{video.title}}</h5>
 
-                <div [ngClass]="{'limitTextHeight': isReadMore}">
+                <!-- ? slice text -->
+                <div>
+                  {{(readMore) ? video.description : video.description | slice:0:50}}
+                  <span *ngIf="!readMore">...</span>
+                  <!-- <a href="javascript:;" *ngIf="!readMore" (click)="readMore=true">[Read More]</a> -->
+                </div>
+
+                <!-- ? read more of less -->
+                <!-- <div [ngClass]="{'limitTextHeight': isReadMore}">
                   <p>{{video.description}}</p>
                 </div>
                 <p class="text-end">
                   <a (click)="showText()">
                     {{ isReadMore ? 'Read More': 'Read Less' }}
                   </a>  
-                </p>
+                </p> -->
 
                 <!-- <iframe [src]="video.url | safe" allowfullscreen></iframe> -->
                 <div class="d-flex justify-content-between align-items-center">

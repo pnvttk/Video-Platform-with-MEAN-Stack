@@ -19,6 +19,8 @@ export class VideoRequestGetComponent implements OnInit {
 
   searchText: any;
 
+  readMore = false;
+
   // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
   MONGO_API = 'http://localhost:9000'
 
