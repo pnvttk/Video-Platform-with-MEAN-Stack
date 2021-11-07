@@ -4,6 +4,7 @@ import { Video } from './video-request-get';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import Swal from 'sweetalert2';
+// import { faAngular } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-video-request-get',
@@ -21,6 +22,11 @@ export class VideoRequestGetComponent implements OnInit {
   searchText: any;
 
   readMore = false;
+
+  data: any
+  // rpt: any
+
+  arrOfobj: any[] = []
 
   // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
   MONGO_API = 'http://localhost:9000'
@@ -46,8 +52,17 @@ export class VideoRequestGetComponent implements OnInit {
     */
     
     this.http.get<Video[]>(this.MONGO_API + '/videos').subscribe(response => {
-      console.log('response', response)
+      // console.log('response from server', response) //? check res from server
+      this.arrOfobj = response
+      //? for loop to replace \n string to newline
+      for (var i = 0; i < this.arrOfobj.length; i++){
+        this.arrOfobj[i].description = this.arrOfobj[i].description.replace(/\\n/g, '<br>\n') //* work
+      }
+      // console.log(this.arrOfobj[8].description) //? check arr of desc
+      //? put respon into property
       this.videoList = response
+      this.data = response
+
     })
   }
 

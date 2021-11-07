@@ -26,9 +26,12 @@ export class VideoDetailComponent implements OnInit {
 
   // http header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json')
+  // get gata
   data: any
+  // get id
   getId: any
-  // updateForm: FormGroup
+  // replace text
+  rpt: any
 
   constructor(
     public formBuilder: FormBuilder,
@@ -39,66 +42,34 @@ export class VideoDetailComponent implements OnInit {
   ) {
     //? match id from video request
     this.getId = this.activatedRoute.snapshot.paramMap.get('id')
-
-    /* //? update form is not used
-    // this.videoRequest.GetVideo(this.getId).subscribe(res => {
-    //   this.updateForm.setValue({
-    //     title: res['title'],
-    //     description: res['description'],
-    //     url: res['url'],
-    //     img_url: res['img_url'],
-    //   })
-    // })
-
-    // this.updateForm = this.formBuilder.group({
-    //   title: [''],
-    //   description: [''],
-    //   url: [''],
-    //   img_url: [''],
-    // })
-    */
   }
    
 
   ngOnInit(): void {
 
     console.log('video: id = ' + this.getId)
-    this.getOne()
+    this.videoRequest.GetVideo(this.getId).subscribe(data => {
+      console.log(data)
+      this.data = data
+      // this.getOne()
+      // console.log(this.replace())
+      //? replace \n then put in rpt
+      this.rpt = this.data.description.replace(/\\n/g, '<br>\n')
+      
+    })
+  
     // console.log(this.)
   }
 
   // ? ref :https://youtu.be/Il-o7GChUr8
   getOne() {
-    this.videoRequest.GetVideo(this.getId).subscribe(data => {
-      console.log(data)
-      this.data = data
-    })
+    // check how is access data.description work? 
+      console.log("test getOneDes"+this.data.description )
   }
 
-  /* //? not working
-  GetVideo(id: any): Observable<any> {
-    // console.log('testGetvideo') //? check function
-    let API_URL = `${this.MONGO_API}/video/${id}`
-    // console.log(API_URL) //? check url
-    return this.http.get(API_URL, { headers: this.httpHeaders })
-      .pipe(map((res: any) => {
-      return res || {}
-      }),
-      catchError(this.handleError)
-      )
+  replace() {
+    this.data.description.replace(/\\n/g, '\n')
   }
-  */
-
-
-  /* //? for update from but not using form
-  onUpdate(): any {
-    this.videoRequest.UpdateVideo(this.getId, this.updateForm.value).subscribe(() => {
-      console.log('Data Updated Succesfully')
-      this.ngZome.run(() => this.router.navigateByUrl('/video-detail'))
-    },(err) => {
-      console.log(err)
-    })
-  }*/
 
     // Error
     handleError(error: HttpErrorResponse) {

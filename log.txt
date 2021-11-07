@@ -259,3 +259,8 @@ Add : Search filter box
 
 Add : Read More / Read less
     ref : https://www.cloudhadoop.com/angular-dynamically-shorten-long-text/
+
+Error : New line \\n <br> 
+    ref : https://stackoverflow.com/questions/62686893/new-line-n-does-not-work-in-mongodb-atlas
+    https://stackoverflow.com/questions/52220411/typescript-creating-new-lines-in-a-string-using-n
+    https://forums.meteor.com/t/how-to-store-and-render-paragraphs-with-line-breaks/6549/9

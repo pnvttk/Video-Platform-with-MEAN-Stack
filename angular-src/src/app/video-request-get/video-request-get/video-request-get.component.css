@@ -44,6 +44,6 @@ color: inherit;
     height: 33px;
     overflow: hidden;
 }
-.videoDes{
-    white-space: pre-wrap;
-}
+.newlines {
+    white-space: pre-line;
+  }
