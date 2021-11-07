@@ -4,6 +4,8 @@ import { Video } from '../video-request-get';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { VideoRequestGetComponent } from '../video-request-get.component';
 import { FormsModule } from '@angular/forms';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update',
@@ -38,6 +40,7 @@ export class UpdateComponent implements OnInit {
       description: [''],
       img_url: [''],
     })
+    
 
 }
   
@@ -48,6 +51,20 @@ export class UpdateComponent implements OnInit {
   onUpdate(): any {
     this.videoRequest.UpdateVideo(this.getId, this.updateForm.value).subscribe(() => {
       console.log('Data Updated Successfully')
+      Swal.fire({
+        title: 'Video updated Successfully',
+        width: 600,
+        padding: '3em',
+        background: '#fff url(/images/trees.png)',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("https://i.gifer.com/Vho.gif")
+          no-repeat
+          center top
+  
+        `
+      })
+  
       this.ngZone.run(() => this.router.navigateByUrl('/video'))
     })
   }

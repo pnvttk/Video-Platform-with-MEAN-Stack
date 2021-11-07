@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Video } from './video-request-get';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-video-request-get',
@@ -77,12 +78,27 @@ export class VideoRequestGetComponent implements OnInit {
 
   delete(id: any, i: any) {
     console.log(id)
-    if (window.confirm('Are you sure?')) {
-      this.DeleteVideo(id).subscribe((res) => {
-        this.videoList.splice(i, 1)
-      })
-    }
-  }
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.DeleteVideo(id).subscribe((res) => {
+          this.videoList.splice(i, 1)
+        })
+        Swal.fire(
+          'Deleted!',
+          'Video has been deleted.',
+          'success',
+        )
+      }
+    })
+}
 
   scrollToTop() {
     window.scrollTo(0, 0);

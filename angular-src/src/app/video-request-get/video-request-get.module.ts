@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddVideoComponent } from './video-request-get/add-video/add-video.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { UpdateComponent } from './video-request-get/update/update.component';
+import { TooltipModule } from 'primeng/tooltip';
+import {ScrollPanelModule} from 'primeng/scrollpanel';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { UpdateComponent } from './video-request-get/update/update.component';
     MatSelectModule,
     MatChipsModule,
     BrowserAnimationsModule,
-    InputTextModule
+    InputTextModule,
+    TooltipModule,
+    ScrollPanelModule,
 
   ],
   exports: [VideoRequestGetComponent]

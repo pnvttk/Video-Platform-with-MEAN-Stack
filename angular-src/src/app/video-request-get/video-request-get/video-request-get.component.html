@@ -3,16 +3,26 @@
     <section class="mt-3 py-5 text-center container">
       <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-          <h1 class="fw-light">Video Course</h1>
-          <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione laboriosam esse eius animi minus explicabo autem architecto harum, reprehenderit quos, beatae vero eligendi ad nam ipsa assumenda quas consequatur? Labore!</p>
+          <h1 class="fw-light">
+            Course lists              
+            <i class="pi pi-plus-circle me-3 text-muted" style="font-size: 1rem" [routerLink]="['/add']"></i>
+          </h1>
+
+          <div>
+            <p class="lead text-muted">
+              All video in this project is used as reference for backend and frontend project purpose. I DO NOT own any video in this project. All rights reserved to the copyright owners.
+            </p>
+          </div>
+
 
           <form>
             <div class="form-group py-3">
+
               <p class="lead text-muted">You can search from here</p>
 
               <span class="p-input-icon-left">
               <i class="pi pi-search"></i>
-              <input type="text" pInputText placeholder="Search" name="searchsText"[(ngModel)]="searchText" />
+              <input type="text" pInputText placeholder="Search" name="searchsText"[(ngModel)]="searchText" pTooltip="Enter your keyword" />
               </span>
 
               <!-- <input type="text" name="searchsText" placeholder="Search" [(ngModel)]="searchText"> -->
@@ -34,14 +44,21 @@
                   <b>{{video.title}}</b>
                 </h3>
 
+                <!-- ? ScrollPanel -->
+                <div class="mb-3">
+                  <p-scrollPanel [style]="{width: '100%', height: '60px'}">
+                    {{video.description}}
+                </p-scrollPanel>    
+                </div>
+
+
                 <!-- ? slice text -->
-                <div class="limitTextHeight mb-2">
+                <!-- <div class="limitTextHeight mb-2">
                   <p>
                     {{(readMore) ? video.description : video.description | slice:0:200}}
                   </p>
                   <span *ngIf="!readMore"></span>
-                  <!-- <a href="javascript:;" *ngIf="!readMore" (click)="readMore=true">[Read More]</a> -->
-                </div>
+                </div> -->
 
                 <!-- ? read more of less -->
                 <!-- <div [ngClass]="{'limitTextHeight': isReadMore}">
