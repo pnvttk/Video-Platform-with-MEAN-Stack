@@ -41,7 +41,7 @@ color: inherit;
  }
  
  .limitTextHeight {
-    height: 33px;
+    height: 32px;
     overflow: hidden;
 }
 .newlines {
