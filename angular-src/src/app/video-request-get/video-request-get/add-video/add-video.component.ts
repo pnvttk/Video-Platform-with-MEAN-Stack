@@ -38,7 +38,7 @@ export class AddVideoComponent implements OnInit {
       title: 'Video added Successfully',
       width: 600,
       padding: '3em',
-      background: '#fff url(/images/trees.png)',
+      background: '#fff',
       backdrop: `
         rgba(0,0,123,0.4)
         url("https://i.gifer.com/Vho.gif")
