@@ -26,7 +26,7 @@ export class NavbarComponent implements OnInit {
       confirmButtonColor: '#249A00'
 
     });
-    console.log("Logout Success")
+    // console.log("Logout Success")
     this.router.navigate(['/login'])
     return false;
   }

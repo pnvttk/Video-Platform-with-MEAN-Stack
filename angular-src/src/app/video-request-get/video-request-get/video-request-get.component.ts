@@ -72,7 +72,7 @@ export class VideoRequestGetComponent implements OnInit {
 
   GetVideo(id: any): Observable<any>{
     let API_URL = `${this.MONGO_API}/video/${id}`
-    console.log("this is GetVideo(id) " + API_URL)
+    // console.log("this is GetVideo(id) " + API_URL)
     return this.http.get(API_URL, { headers: this.httpHeaders})
   }
 
@@ -92,7 +92,7 @@ export class VideoRequestGetComponent implements OnInit {
   }
 
   delete(id: any, i: any) {
-    console.log(id)
+    // console.log(id)
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",

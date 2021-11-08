@@ -48,7 +48,7 @@ export class AddVideoComponent implements OnInit {
       `
     })
     this.videoRequest.AddVideo(this.videoForm.value).subscribe(() => {
-      console.log("Video added Successfully")
+      // console.log("Video added Successfully")
       this.ngZone.run(() => this.router.navigateByUrl('/video'))
     }, (err) => {
       console.log(err)

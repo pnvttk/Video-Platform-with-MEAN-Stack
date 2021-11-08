@@ -50,7 +50,7 @@ export class UpdateComponent implements OnInit {
 
   onUpdate(): any {
     this.videoRequest.UpdateVideo(this.getId, this.updateForm.value).subscribe(() => {
-      console.log('Data Updated Successfully')
+      // console.log('Data Updated Successfully')
       Swal.fire({
         title: 'Video updated Successfully',
         width: 600,

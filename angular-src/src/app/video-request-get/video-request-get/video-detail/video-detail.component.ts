@@ -47,9 +47,9 @@ export class VideoDetailComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log('video: id = ' + this.getId)
+    // console.log('video: id = ' + this.getId)
     this.videoRequest.GetVideo(this.getId).subscribe(data => {
-      console.log(data)
+      // console.log("check GetVideo by id"+data)
       this.data = data
       // this.getOne()
       // console.log(this.replace())
@@ -64,7 +64,7 @@ export class VideoDetailComponent implements OnInit {
   // ? ref :https://youtu.be/Il-o7GChUr8
   getOne() {
     // check how is access data.description work? 
-      console.log("test getOneDes"+this.data.description )
+      console.log("test getOneDes",this.data.description )
   }
 
   replace() {

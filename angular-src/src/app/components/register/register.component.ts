@@ -34,7 +34,7 @@ export class RegisterComponent implements OnInit {
         
     // Required Fields
     if (!this.validateService.validateRegister(user)) {
-      console.log('Please fill in all fields');
+      // console.log('Please fill in all fields');
       Swal.fire({
         icon: 'error',
         text: 'Please fill in all fields'
@@ -44,7 +44,7 @@ export class RegisterComponent implements OnInit {
 
     // Validate Email
     if (!this.validateService.validateEmail(user.email)) {
-      console.log('Please use a valid email');
+      // console.log('Please use a valid email');
       Swal.fire({
         icon: 'error',
         text: 'Please use a valid email'
@@ -60,7 +60,7 @@ export class RegisterComponent implements OnInit {
           icon: 'success',
           text: 'Register Success'
         });
-        console.log("Register Success")
+        // console.log("Register Success")
         this.router.navigate(['/login'])
       } else {
         // Swal.fire({

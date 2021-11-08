@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
  
 
     this.authService.authenticateUser(user).subscribe(data => {
-      console.log(data) // check auth of user
+      console.log("Login authenticate ",data) // check auth of user
       if ((data as any).success) {
         this.authService.storeUserData((data as any).token, (data as any).user)
         const mydata = data
