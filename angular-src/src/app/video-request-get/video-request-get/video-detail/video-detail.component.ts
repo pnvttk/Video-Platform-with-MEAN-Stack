@@ -44,9 +44,7 @@ export class VideoDetailComponent implements OnInit {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id')
   }
    
-
   ngOnInit(): void {
-
     // console.log('video: id = ' + this.getId)
     this.videoRequest.GetVideo(this.getId).subscribe(data => {
       // console.log("check GetVideo by id"+data)
@@ -55,9 +53,7 @@ export class VideoDetailComponent implements OnInit {
       // console.log(this.replace())
       //? replace \n then put in rpt
       this.rpt = this.data.description.replace(/\\n/g, '<br>\n')
-      
     })
-  
     // console.log(this.)
   }
 

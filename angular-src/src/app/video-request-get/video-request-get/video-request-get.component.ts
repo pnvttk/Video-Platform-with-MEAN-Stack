@@ -15,10 +15,6 @@ export class VideoRequestGetComponent implements OnInit {
 
   videoList: Video[] = [];
 
-  mystring = 'I want this to be two lines. \\n Two lines would be great'
-
-  testP = this.mystring.replace(/\\n/g, '\n')
-
   searchText: any;
 
   readMore = false;
@@ -33,7 +29,6 @@ export class VideoRequestGetComponent implements OnInit {
 
   // Http header
   httpHeaders = new HttpHeaders().set('Conten-Type', 'application/json')
-  
   
   constructor(
     private http: HttpClient,

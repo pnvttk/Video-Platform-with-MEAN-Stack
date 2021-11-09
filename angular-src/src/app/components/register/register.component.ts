@@ -13,7 +13,8 @@ export class RegisterComponent implements OnInit {
   name: String ="";
   username: String="";
   email: String="";
-  password: String="";
+  password: String = "";
+  permission: String = "USER"
 
   constructor(
     private validateService: ValidateService,
@@ -29,7 +30,8 @@ export class RegisterComponent implements OnInit {
       name: this.name,
       email: this.email,
       username: this.username,
-      password: this.password
+      password: this.password,
+      permission: this.permission
     }
         
     // Required Fields
@@ -52,7 +54,6 @@ export class RegisterComponent implements OnInit {
       return false;
     }
     
-
     // register user
     this.authService.registerUser(user).subscribe(data => {
       if ((data as any).success) {
@@ -70,8 +71,6 @@ export class RegisterComponent implements OnInit {
         // this.router.navigate(['/register'])
         Swal.mixin({
           icon: 'error',
-          
-
         })
         this.router.navigate(['/register'])
       }

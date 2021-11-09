@@ -28,8 +28,6 @@ export class LoginComponent implements OnInit {
       password: this.password
     }
 
- 
-
     this.authService.authenticateUser(user).subscribe(data => {
       console.log("Login authenticate ",data) // check auth of user
       if ((data as any).success) {

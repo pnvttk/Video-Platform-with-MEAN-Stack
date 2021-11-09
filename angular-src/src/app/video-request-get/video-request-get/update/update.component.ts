@@ -41,10 +41,8 @@ export class UpdateComponent implements OnInit {
       img_url: [''],
     })
     
-
 }
   
-
   ngOnInit(): void {
   }
 
@@ -61,12 +59,9 @@ export class UpdateComponent implements OnInit {
           url("https://i.gifer.com/Vho.gif")
           no-repeat
           center top
-  
         `
       })
-  
       this.ngZone.run(() => this.router.navigateByUrl('/video'))
     })
   }
-
 }
