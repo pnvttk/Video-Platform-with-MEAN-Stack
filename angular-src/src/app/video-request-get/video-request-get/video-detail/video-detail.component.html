@@ -17,12 +17,12 @@
       <h2>{{data?.title}}</h2>
     </div>
 
-    <div class="wrapper mt-3 shadow">
-      
+    <div class="wrapper mt-3 shadow">      
       <iframe [src]="data?.url | safeurl" frameborder="0" class="responsive-iframe" height="100%" width="100%"></iframe>
     </div>
 
     <div class="card shadow mt-3 px-3">
+      <!-- ? use innerHTML instead of {{}} work some how but still can't not live update -->
       <div class="card-body newlines" [innerHTML]="rpt">
         <!-- <p>{{rpt}}</p> -->
         <!-- <p>{{data?.description}}</p> -->
@@ -35,9 +35,6 @@
 <div class="container-fluid">
   <footer class="text-muted py-3 mt-6">
     <div class="container">
-      <p class="float-end mb-1">
-        <!-- <a href="/video">Back to top</a> -->
-      </p>
       <p class="mb-1">MEAN Stack Project made by Pannavach.</p>
     </div>
   </footer>

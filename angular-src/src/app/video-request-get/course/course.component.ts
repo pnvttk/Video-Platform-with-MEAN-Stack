@@ -12,18 +12,23 @@ import Swal from 'sweetalert2';
 })
 export class CourseComponent implements OnInit {
 
+  //empty property to store class
   videoList: Video[] = [];
 
+  // filter searh
   searchText: any;
 
-  readMore = false;
-
+  // temp data
   data: any
-  // rpt: any
 
+  // for replace text
+  // rpt: any // not used anymore
+
+  // use this instead of rpt
   arrOfobj: any[] = []
 
-  // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
+  // REST API
+  // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/' // not use anymore
   MONGO_API = 'http://localhost:9000'
 
   // Http header
@@ -36,22 +41,16 @@ export class CourseComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    //? old php
-    /*
-    this.http.get<Video[]>(this.PHP_API + '/videos/read.php').subscribe(response => {
-      console.log('response', response)
-      this.videoList = response
-    })
-    */
     
     this.http.get<Video[]>(this.MONGO_API + '/videos').subscribe(response => {
       // console.log('response from server', response) //? check res from server
-      this.arrOfobj = response
+      this.arrOfobj = response //? put response data in to arrOfobj
+
       //? for loop to replace \n string to newline
       for (var i = 0; i < this.arrOfobj.length; i++){
         this.arrOfobj[i].description = this.arrOfobj[i].description.replace(/\\n/g, '<br>\n') //* work
       }
+
       // console.log(this.arrOfobj[8].description) //? check arr of desc
       //? put respon into property
       this.videoList = response
@@ -113,10 +112,13 @@ export class CourseComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  isReadMore = true
+  //? read more/less button // not use anymore
+  // // read more ft
+  // // readMore = false; // not used anymore
+  // // isReadMore = true
 
-  showText() {
-     this.isReadMore = !this.isReadMore
-  }
+  // showText() {
+  //    this.isReadMore = !this.isReadMore
+  // }
 
 }

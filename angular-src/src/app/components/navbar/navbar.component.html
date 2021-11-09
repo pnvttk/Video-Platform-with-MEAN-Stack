@@ -25,6 +25,7 @@
             <button type="button" class="btn btn-outline-light me-2" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/login']">Sign-in</button>
 
             <button type="button" class="btn btn-warning" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/register']">Sign-up</button>
+            
             <!-- ? When login -->
 
                 <!-- <li *ngIf="!authService.loggedIn() && authService.permAdmin()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
@@ -32,18 +33,16 @@
                 </li>
                 <li *ngIf="!authService.loggedIn() && (!authService.permAdmin() || authService.permUser())" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                     <a class="nav-link active text-white" [routerLink]="['/video']">Course</a>
-                </li>
+                </li>-->
 
-               -->
-
-            <button type="button" class="btn btn-outline-warning me-2" *ngIf="!authService.loggedIn() && (authService.permAdmin()&& !authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/video']">Video</button>
+            <button type="button" class="btn btn-outline-warning me-2" *ngIf="!authService.loggedIn() && (authService.permAdmin() && !authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/video']">Video</button>
             
             <button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.loggedIn() && (!authService.permAdmin() && authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/course']">Course</button>
 
             
             <button type="button" class="btn btn-outline-info me-2" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']">Profile</button>
 
-            <button type="button" class="btn btn-danger me-2" *ngIf="!authService.loggedIn()" (click)="onLogoutClick()" href="#">Log-out</button>
+            <button type="button" class="btn btn-danger me-2" *ngIf="!authService.loggedIn()" (click)="onLogoutClick()">Log-out</button>
           </div>
           
         </div>

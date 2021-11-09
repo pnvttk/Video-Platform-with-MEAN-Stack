@@ -10,14 +10,15 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent implements OnInit {
   
+  // temp input
   username!: String;
   password!: String;
   
+  // store user data
   user: any;
 
+  // store permission data
   perm!: String
-
-  roleAdmin = "ADMIN"
 
   constructor(
     private authService: AuthService,
@@ -28,23 +29,22 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    // console.log(this.username) // test onSubmit
-    const user = {
+    // console.log(this.username) // check onSubmit
+    const userInput = {
       username: this.username,
       password: this.password
     }
 
-    this.authService.authenticateUser(user).subscribe(data => {
+    this.authService.authenticateUser(userInput).subscribe(data => {
       console.log("Login authenticate ",data) // check auth of user
       if ((data as any).success) {
         this.authService.storeUserData((data as any).token, (data as any).user)
-        const mydata = data
+        // const mydata = data // not use
         Swal.fire({
           icon: 'success',
           text: 'Login Success',
           confirmButtonColor: '#249A00',
-          
-          // text: Object.values(data)[0] // select value from object 
+          // text: Object.values(data)[0] // select value from object // not use anymore
         });
         this.authService.getProfile().subscribe((profile: any) => {
           this.user = profile.user;
@@ -53,18 +53,16 @@ export class LoginComponent implements OnInit {
           // console.log("this permission in login page",this.perm)
           if (this.perm === "ADMIN") {
             this.router.navigate(['/video'])
-  
           } else {
             this.router.navigate(['/course'])
           }
         })
-        // this.router.navigate(['/video'])
+        // this.router.navigate(['/video']) // old way without permission
       } else {
-        // const mydata = data
         Swal.fire({
           icon: 'error',
           confirmButtonColor: '#FF0000',
-          text: Object.values(data)[1] // select value from object 
+          text: Object.values(data)[1] // select value from object, in this case error log
         });
         this.router.navigate(['/login'])
       }

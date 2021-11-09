@@ -23,26 +23,26 @@ a, a:hover, a:focus, a:active {
 
 .swal2-popup {
   font-size: 2rem;
-  }
-  .swal-height {
-      height: 600px;
-      width: 600px;
-  }
+}
+.swal-height {
+    height: 600px;
+    width: 600px;
+}
   
-  @media (max-width: 800px) {
-    .swal-height {
-      height: 300px;
-      width: 300px;
+@media (max-width: 800px) {
+  .swal-height {
+    height: 300px;
+    width: 300px;
   }
-  }
-  .footer {
-    position:fixed;
-    left:0px;
-    bottom:20px;
-    height:30px;
-    width:100%;
- }
+}
+.footer {
+  position:fixed;
+  left:0px;
+  bottom:20px;
+  height:30px;
+  width:100%;
+}
  
- .newlines {
-  white-space: pre-line;
+.newlines {
+white-space: pre-line;
 }

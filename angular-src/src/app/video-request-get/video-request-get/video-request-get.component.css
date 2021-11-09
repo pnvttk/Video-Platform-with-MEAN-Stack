@@ -10,16 +10,16 @@ img {
 }
 .swal2-popup {
     font-size: 2rem;
-    }
+}
+.swal-height {
+    height: 600px;
+    width: 600px;
+}
+
+@media (max-width: 800px) {
     .swal-height {
-        height: 600px;
-        width: 600px;
-    }
-    
-    @media (max-width: 800px) {
-      .swal-height {
-        height: 300px;
-        width: 300px;
+    height: 300px;
+    width: 300px;
     }
 }
 .responsive {
@@ -27,7 +27,7 @@ img {
     
     width: auto;
     max-height: 100px;
-    } 
+} 
 a, a:hover, a:focus, a:active {
 text-decoration: none;
 color: inherit;
@@ -38,12 +38,12 @@ color: inherit;
     bottom:20px;
     height:30px;
     width:100%;
- }
+}
  
- .limitTextHeight {
+.limitTextHeight {
     height: 32px;
     overflow: hidden;
 }
 .newlines {
     white-space: pre-line;
-  }
+}

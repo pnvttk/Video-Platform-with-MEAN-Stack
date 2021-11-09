@@ -8,11 +8,10 @@ import { map } from "rxjs/operators";
 })
 export class AuthService {
 
+  // var for store data
   authToken: any;
   user: any;
   perm!: String;
-
-  ADMIN = "ADMIN"
   
   constructor(
     public jwtHelper: JwtHelperService,
@@ -34,24 +33,11 @@ export class AuthService {
   }
 
   getProfile() {
-
-    // let headers = new HttpHeaders() //? old
     this.loadToken();
-
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': this.authToken
     });
-
-    //? not use
-    // const headers = new HttpHeaders({
-    //   'Content-Type': 'application/json',
-    //   'Authorization': this.authToken
-    // });
-
-    // headers.append('Authorizaion', this.authToken);
-    // headers.append('Content-Type', 'application/json')
-    
     return this.http.get('http://localhost:3000/users/profile', {headers: headers});
   }
 
@@ -75,24 +61,25 @@ export class AuthService {
     this.perm = ""
     localStorage.clear();
   }
+
   loggedIn() {
-    // this.loadToken();
-    // const helper = new JwtHelperService();
-    // return helper.isTokenExpired(this.authToken); //False if Token is good, True if not good
-    // console.log(this.jwtHelper.isTokenExpired())
+    //// this.loadToken();
+    //// const helper = new JwtHelperService();
+    //// return helper.isTokenExpired(this.authToken); //False if Token is good, True if not good
+    //// console.log(this.jwtHelper.isTokenExpired())
     return this.jwtHelper.isTokenExpired();
   }
 
   permAdmin() {
     this.perm = JSON.parse(localStorage.getItem('perm') || '{}');
     // console.log("check permAdmin", this.perm)
-
     if (this.perm === "ADMIN") {
       // console.log("check permAdmin2", this.perm)
       return true
     }
     return this.jwtHelper.isTokenExpired();
   }
+
   permUser() {
     this.perm = JSON.parse(localStorage.getItem('perm') || '{}');
 
@@ -101,12 +88,5 @@ export class AuthService {
     }
     return this.jwtHelper.isTokenExpired();
   }
-
-
-  // v2
-  // loggedIn(){
-  //   if(this.authToken != null){return true;}
-  //   else{return false;}
-  // }
 
 }

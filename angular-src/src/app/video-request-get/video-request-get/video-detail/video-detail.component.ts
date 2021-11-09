@@ -21,8 +21,10 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class VideoDetailComponent implements OnInit {
 
+  // property from class
   videoList: Video[] = [];
   
+  // API
   MONGO_API = 'http://localhost:9000'
 
   // http header
@@ -41,8 +43,6 @@ export class VideoDetailComponent implements OnInit {
     private sanitizer: DomSanitizer,
     public authService: AuthService,
     private router:Router
-
-
   ) {
     //? match id from video request
     this.getId = this.activatedRoute.snapshot.paramMap.get('id')

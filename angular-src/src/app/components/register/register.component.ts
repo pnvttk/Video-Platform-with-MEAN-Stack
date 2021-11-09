@@ -10,10 +10,14 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+
+  // temp var to submit register
   name: String ="";
   username: String="";
   email: String="";
   password: String = "";
+
+  // when register set perm to USER
   permission: String = "USER"
 
   constructor(
@@ -26,7 +30,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegisterSubmit() {
-    const user = {
+    const userInput = {
       name: this.name,
       email: this.email,
       username: this.username,
@@ -35,7 +39,7 @@ export class RegisterComponent implements OnInit {
     }
         
     // Required Fields
-    if (!this.validateService.validateRegister(user)) {
+    if (!this.validateService.validateRegister(userInput)) {
       // console.log('Please fill in all fields');
       Swal.fire({
         icon: 'error',
@@ -45,7 +49,7 @@ export class RegisterComponent implements OnInit {
     } 
 
     // Validate Email
-    if (!this.validateService.validateEmail(user.email)) {
+    if (!this.validateService.validateEmail(userInput.email)) {
       // console.log('Please use a valid email');
       Swal.fire({
         icon: 'error',
@@ -55,7 +59,7 @@ export class RegisterComponent implements OnInit {
     }
     
     // register user
-    this.authService.registerUser(user).subscribe(data => {
+    this.authService.registerUser(userInput).subscribe(data => {
       if ((data as any).success) {
         Swal.fire({
           icon: 'success',

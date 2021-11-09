@@ -3,7 +3,6 @@ label {
     overflow: hidden;
     line-height: 20px;
 }
-
 input, img {
     float: left;
     display: block;
@@ -11,16 +10,15 @@ input, img {
 }
 .swal2-popup {
     font-size: 2rem;
-    }
+}
+.swal-height {
+    height: 600px;
+    width: 600px;
+}
+@media (max-width: 800px) {
     .swal-height {
-        height: 600px;
-        width: 600px;
+    height: 300px;
+    width: 300px;
     }
-    
-    @media (max-width: 800px) {
-      .swal-height {
-        height: 300px;
-        width: 300px;
-    }
-    }
+}
     

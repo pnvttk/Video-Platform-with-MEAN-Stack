@@ -14,7 +14,9 @@ import Swal from 'sweetalert2';
 })
 export class UpdateComponent implements OnInit {
 
+  // temp getId 
   getId: any
+  // formproperty
   updateForm: FormGroup
 
   constructor(

@@ -13,17 +13,21 @@ import Swal from 'sweetalert2';
 })
 export class VideoRequestGetComponent implements OnInit {
 
+  // property to store from class
   videoList: Video[] = [];
 
+  // search filter
   searchText: any;
 
-  readMore = false;
-
+  // temp store var
   data: any
-  // rpt: any
 
+  // rpt: any // not use anymore
+
+  // temp store arr of obj
   arrOfobj: any[] = []
 
+  // API
   // PHP_API = 'http://localhost/wpj/php_rest_vdo/api/'
   MONGO_API = 'http://localhost:9000'
 
@@ -114,11 +118,13 @@ export class VideoRequestGetComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-  isReadMore = true
+  //? not use anymore ft
+  // readMore = false;
+  // isReadMore = true
 
-  showText() {
-     this.isReadMore = !this.isReadMore
-  }
+  // showText() {
+  //    this.isReadMore = !this.isReadMore
+  // }
 
 }
 

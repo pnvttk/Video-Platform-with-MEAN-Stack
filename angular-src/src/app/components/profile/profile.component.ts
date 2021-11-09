@@ -9,8 +9,9 @@ import { User } from 'src/app/app.component';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+  // store user profile data
   user: any;
-  
 
   constructor(
     private authService: AuthService,

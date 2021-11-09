@@ -6,15 +6,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { VideoDetailComponent } from './video-detail.component';
 import { SafeUrlPipe } from './safe-url.pipe';
 
-
-
 @NgModule({
   declarations: [VideoDetailComponent, SafeUrlPipe],
   imports: [
     CommonModule,
     NgbModule,
     RouterModule
-
   ]
 })
 export class VideoDetailModule { }

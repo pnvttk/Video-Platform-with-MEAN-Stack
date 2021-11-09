@@ -11,10 +11,12 @@
 
   </div>
 </form>
+
 <button type="button" class="btn btn btn-outline-primary shadow-sm mb-3" [routerLink]="['/add']">Add</button>
 
 <div class="table-responsive-lg">
   <table class="table table-hover table-borderless" >
+
     <thead>
       <tr class="table-dark">
         <th scope="col">Title</th>
@@ -23,30 +25,33 @@
         <th scope="col">Action</th>
       </tr>
     </thead>
+
     <tbody *ngFor="let video of videoList | filter:searchText; let i = index">
       <tr>
         <td class="col-md-2"><b>{{video.title}}</b></td>
+        
         <td class="col-md-2"><img [src]="video.img_url" class="responsive"></td>
+
         <td class="col-md-6">
           <div class="mb-3 newlines" >
-            <div ></div>
             <p-scrollPanel [style]="{width: '100%', height: '100px'}">
               <div class="mb-3 newlines" [innerHTML]="arrOfobj[i].description | filter:searchText"></div>
-          </p-scrollPanel>    
+            </p-scrollPanel>    
           </div>
         </td>
+
         <td>
           <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                  <button type="button" class="btn btn btn-outline-secondary shadow-sm" [routerLink]="['/detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
-                  
-                  <button type="button" class="btn btn btn-outline-warning shadow-sm" [routerLink]="['/update/'+video._id]">Edit</button>
+            <div class="btn-group">
+              <button type="button" class="btn btn btn-outline-secondary shadow-sm" [routerLink]="['/detail/'+video._id]" (click)="GetVideo(video._id); scrollToTop();">View</button>
+              
+              <button type="button" class="btn btn btn-outline-warning shadow-sm" [routerLink]="['/update/'+video._id]">Edit</button>
 
-                  <button class="btn btn btn-outline-danger" (click)="delete(video._id, i)">Delete</button>
-                  
-              </div>
+              <button class="btn btn btn-outline-danger" (click)="delete(video._id, i)">Delete</button>
+            </div>
           </div>
         </td>
+
       </tr>
     </tbody>
   </table>
@@ -55,9 +60,6 @@
 <div class="container-fluid">
   <footer class="text-muted py-3 mt-6">
     <div class="container">
-      <p class="float-end mb-1">
-        <!-- <a href="/video">Back to top</a> -->
-      </p>
       <p class="mb-1">MEAN Stack Project made by Pannavach.</p>
     </div>
   </footer>

@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 })
 export class AddVideoComponent implements OnInit {
 
+  // form property
   videoForm: FormGroup
   
   constructor(
@@ -26,7 +27,6 @@ export class AddVideoComponent implements OnInit {
       url: [''],
       description: [''],
       img_url: [''],
-
     })
   }
 
@@ -44,7 +44,6 @@ export class AddVideoComponent implements OnInit {
         url("https://i.gifer.com/Vho.gif")
         no-repeat
         center top
-
       `
     })
     this.videoRequest.AddVideo(this.videoForm.value).subscribe(() => {
