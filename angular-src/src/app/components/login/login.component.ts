@@ -50,12 +50,12 @@ export class LoginComponent implements OnInit {
           this.user = profile.user;
           this.perm = this.user.permission
           
-          console.log("this permission in login page",this.perm)
+          // console.log("this permission in login page",this.perm)
           if (this.perm === "ADMIN") {
             this.router.navigate(['/video'])
   
           } else {
-            this.router.navigate(['/profile'])
+            this.router.navigate(['/course'])
           }
         })
         // this.router.navigate(['/video'])

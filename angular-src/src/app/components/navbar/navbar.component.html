@@ -3,26 +3,46 @@
       <div class="container">
         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
 
-          <a class="navbar-brand text-white" href="">Video Course</a>
+          <a class="navbar-brand text-white" [routerLink]="['']">Video Course</a>
 
           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 
-            <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-                <a href="" class="nav-link px-2 text-white">Home</a>
-            </li>
+            <!-- <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a [routerLink]="['']" class="nav-link px-2 text-white">Home</a>
+            </li> -->
 
-            <li *ngIf="!authService.loggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+            <!-- <li *ngIf="!authService.loggedIn() && authService.permAdmin()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
                 <a class="nav-link active text-white" [routerLink]="['/video']">Video</a>
             </li>
+            <li *ngIf="!authService.loggedIn() && (!authService.permAdmin() || authService.permUser())" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                <a class="nav-link active text-white" [routerLink]="['/video']">Course</a>
+            </li> -->
 
           </ul>
         
           <div class="text-end">
             <!-- ? When Not login -->
             <button type="button" class="btn btn-outline-light me-2" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/login']">Sign-in</button>
+
             <button type="button" class="btn btn-warning" *ngIf="authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/register']">Sign-up</button>
             <!-- ? When login -->
-            <button type="button" class="btn btn-light me-2" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']">Profile</button>
+
+                <!-- <li *ngIf="!authService.loggedIn() && authService.permAdmin()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link active text-white" [routerLink]="['/video']">Video</a>
+                </li>
+                <li *ngIf="!authService.loggedIn() && (!authService.permAdmin() || authService.permUser())" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link active text-white" [routerLink]="['/video']">Course</a>
+                </li>
+
+               -->
+
+            <button type="button" class="btn btn-outline-warning me-2" *ngIf="!authService.loggedIn() && (authService.permAdmin()&& !authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/video']">Video</button>
+            
+            <button type="button" class="btn btn-outline-light me-2" *ngIf="!authService.loggedIn() && (!authService.permAdmin() && authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/course']">Course</button>
+
+            
+            <button type="button" class="btn btn-outline-info me-2" *ngIf="!authService.loggedIn()" [routerLinkActive]="['active']" [routerLink]="['/profile']">Profile</button>
+
             <button type="button" class="btn btn-danger me-2" *ngIf="!authService.loggedIn()" (click)="onLogoutClick()" href="#">Log-out</button>
           </div>
           

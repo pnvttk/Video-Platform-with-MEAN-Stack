@@ -10,11 +10,16 @@ export class AuthService {
 
   authToken: any;
   user: any;
+  perm!: String;
+
+  ADMIN = "ADMIN"
   
   constructor(
     public jwtHelper: JwtHelperService,
     private http:HttpClient
-  ) { }
+  ) {
+    
+  }
 
   registerUser(user:any) {
     let headers = new HttpHeaders()
@@ -53,8 +58,10 @@ export class AuthService {
   storeUserData(token:any, user:any) {
     localStorage.setItem('id_token', token)
     localStorage.setItem('user', JSON.stringify(user))
+    localStorage.setItem('perm', JSON.stringify(user.permission))
     this.authToken = token
     this.user = user
+    this.perm = this.user.permission
   }
 
   loadToken() {
@@ -65,6 +72,7 @@ export class AuthService {
   logout() {
     this.authToken = null;
     this.user = null;
+    this.perm = ""
     localStorage.clear();
   }
   loggedIn() {
@@ -74,6 +82,26 @@ export class AuthService {
     // console.log(this.jwtHelper.isTokenExpired())
     return this.jwtHelper.isTokenExpired();
   }
+
+  permAdmin() {
+    this.perm = JSON.parse(localStorage.getItem('perm') || '{}');
+    // console.log("check permAdmin", this.perm)
+
+    if (this.perm === "ADMIN") {
+      // console.log("check permAdmin2", this.perm)
+      return true
+    }
+    return this.jwtHelper.isTokenExpired();
+  }
+  permUser() {
+    this.perm = JSON.parse(localStorage.getItem('perm') || '{}');
+
+    if (this.perm === "USER") {
+      return true
+    }
+    return this.jwtHelper.isTokenExpired();
+  }
+
 
   // v2
   // loggedIn(){

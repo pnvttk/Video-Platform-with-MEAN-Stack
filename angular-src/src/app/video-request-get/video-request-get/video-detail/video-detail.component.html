@@ -7,7 +7,13 @@
     </body> -->
     <!-- * Wrapper Iframe ref : https://stackoverflow.com/questions/17838607/making-an-iframe-responsive -->
     <div class="titleS">
-      <button [routerLink]="['/video']" class="btn btn-warning mb-2 shadow-sm">Go Back</button>
+      <!-- <button [routerLink]="['/course']" class="btn btn-warning mb-2 shadow-sm">Go Back</button>
+      <button [routerLink]="['/course']" class="btn btn-warning mb-2 shadow-sm">Go Back</button> -->
+
+      <button type="button" class="btn btn-outline-warning mb-2" *ngIf="!authService.loggedIn() && (authService.permAdmin()&& !authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/video']">Go back to video</button>
+            
+      <button type="button" class="btn btn-outline-warning mb-2" *ngIf="!authService.loggedIn() && (!authService.permAdmin() && authService.permUser())" [routerLinkActive]="['active']" [routerLink]="['/course']">Go back to course</button>
+
       <h2>{{data?.title}}</h2>
     </div>
 

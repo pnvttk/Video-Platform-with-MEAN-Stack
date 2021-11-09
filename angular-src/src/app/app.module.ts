@@ -42,7 +42,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AddVideoComponent } from './video-request-get/video-request-get/add-video/add-video.component';
 import { UpdateComponent } from './video-request-get/video-request-get/update/update.component';
-import {InputTextareaModule} from 'primeng/inputtextarea';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import {TableModule} from 'primeng/table';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -92,6 +93,7 @@ const appRoutes: Routes = [
     RouterModule,
     MatFormFieldModule,
     InputTextareaModule,
+    TableModule,
     
     
     // Ng2SearchPipeModule,

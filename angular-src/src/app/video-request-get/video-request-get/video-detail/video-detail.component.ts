@@ -12,6 +12,7 @@ import { throwError } from 'rxjs';
 import { SafePipe } from '../safe.pipe';
 import { VideoRequestModule } from '../../video-request-get.module';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-video-detail',
@@ -38,6 +39,9 @@ export class VideoDetailComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private videoRequest: VideoRequestGetComponent,
     private sanitizer: DomSanitizer,
+    public authService: AuthService,
+    private router:Router
+
 
   ) {
     //? match id from video request

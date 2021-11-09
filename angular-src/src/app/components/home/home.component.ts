@@ -3,6 +3,8 @@ import { faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { faAngular } from '@fortawesome/free-brands-svg-icons';
 import { faNodeJs } from '@fortawesome/free-brands-svg-icons';
 import { faJs } from '@fortawesome/free-brands-svg-icons';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,12 @@ export class HomeComponent implements OnInit {
   faAngular = faAngular;
   faNodeJs = faNodeJs
   faJs =faJs
-  constructor() { }
+  constructor(
+    private authService: AuthService,
+    private router:Router
+
+
+  ) { }
 
   ngOnInit(): void {
   }

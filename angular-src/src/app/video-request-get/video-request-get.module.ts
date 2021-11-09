@@ -19,13 +19,15 @@ import {InputTextModule} from 'primeng/inputtext';
 import { UpdateComponent } from './video-request-get/update/update.component';
 import { TooltipModule } from 'primeng/tooltip';
 import {ScrollPanelModule} from 'primeng/scrollpanel';
-
+import { CourseComponent } from './course/course.component';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
     VideoRequestGetComponent,
     AddVideoComponent,
     UpdateComponent,
+    CourseComponent,
     // VideoDetailComponent
     // SafePipe
   ],
@@ -44,6 +46,8 @@ import {ScrollPanelModule} from 'primeng/scrollpanel';
     InputTextModule,
     TooltipModule,
     ScrollPanelModule,
+    TableModule,
+    
 
   ],
   exports: [VideoRequestGetComponent]
