@@ -22,6 +22,7 @@ export class ProfileComponent implements OnInit {
       this.user = profile.user;
       // console.log("this"+this.user)
       // console.log("profile"+profile.user)
+      console.log("this permission",this.user.permission)
     });
     (err: any) => {
       console.log(err)

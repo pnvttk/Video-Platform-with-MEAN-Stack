@@ -13,6 +13,12 @@ export class LoginComponent implements OnInit {
   username!: String;
   password!: String;
   
+  user: any;
+
+  perm!: String
+
+  roleAdmin = "ADMIN"
+
   constructor(
     private authService: AuthService,
     private router:Router
@@ -40,9 +46,21 @@ export class LoginComponent implements OnInit {
           
           // text: Object.values(data)[0] // select value from object 
         });
-        this.router.navigate(['/video'])
+        this.authService.getProfile().subscribe((profile: any) => {
+          this.user = profile.user;
+          this.perm = this.user.permission
+          
+          console.log("this permission in login page",this.perm)
+          if (this.perm === "ADMIN") {
+            this.router.navigate(['/video'])
+  
+          } else {
+            this.router.navigate(['/profile'])
+          }
+        })
+        // this.router.navigate(['/video'])
       } else {
-        const mydata = data
+        // const mydata = data
         Swal.fire({
           icon: 'error',
           confirmButtonColor: '#FF0000',
