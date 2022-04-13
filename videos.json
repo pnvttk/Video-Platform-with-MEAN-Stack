@@ -1,0 +1,46 @@
+[{
+  "_id": {
+    "$oid": "624e87f4c79c4eaebaa5689b"
+  },
+  "title": "Google Cloud Translate API with Angular | Google Cloud Translate API | Google Cloud",
+  "url": "https://www.youtube.com/embed/DkWbxkKOXvw",
+  "description": "I talks to use google cloud translate api in angualar application to translate one language to any other language.\nFor demonstrating, I created a webpage an angular has one input for inputting text and one dropdown for choosing language to translate.\n\nI discussed evertything of google cloud translation basic api -v2 from this documentation\nhttps://cloud.google.com/translate/do...\n",
+  "img_url": "https://i.ytimg.com/vi/DkWbxkKOXvw/hqdefault.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "624e8940c79c4eaebaa568a5"
+  },
+  "title": "Build and Deploy a Full Stack Realtime Chat Messaging App with Authentication & SMS Notifications",
+  "url": "https://www.youtube.com/embed/MJzbJQLGehs",
+  "description": "With Direct and Group Chats, emojis & Reactions, Built-in Gif support, the ability to edit & delete messages, specialized commands, and much more, this fully responsive Medical Pager is the best Chat App that you can currently find on YouTube.\n\nYou'll also learn how to work with Stream. GetStream.io is the number one Chat Messaging platform that allows you to build scalable and custom chat applications using their APIs. \n",
+  "img_url": "https://i.ytimg.com/vi/MJzbJQLGehs/maxresdefault.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "624e89abc79c4eaebaa568aa"
+  },
+  "title": "Node js ภายใน 4 นาที",
+  "url": "https://www.youtube.com/embed/ZumPDIzZN-M",
+  "description": "วันนี้เราจะมาเขียน Node js ด้วยความรวดเร็วกัน\n\nในปัจจุบันภาษาที่นิยมเขียนที่สุดตัวนึงเลยคือ javascript โดยภาษานี้มักจะเขียนคู่กับภาษา html ไว้ run web บน browser แต่ทว่าก็มี node js นี้แหล่ะที่มาช่วยให้ run js บนคอมได้\n\nถ้าเกิดผิดพลาดประการใด อยากให้คอมเม้นบอกกันด้วยนะครับ เพื่อนำ feedback มาปรับปรุงให้ดีขึ้นในอนาคต\n\nref.\nอ่าน/เขียนไฟล์ การเขียน node js พื้นฐาน\nhttps://devahoy.com/blog/2015/07/gett...\n\nการ export module\nhttps://medium.com/ayuth/มา-hack-เข้า...\n\nอันดับความนิยมของ javascript\nhttps://octoverse.github.com/\n\nเรียน node js เพิ่มเติม\nhttps://www.youtube.com/watch?v=74QKi...\n\ntext editor rank\nhttps://www.software.com/src/ranking-...",
+  "img_url": "https://i.ytimg.com/vi/ZumPDIzZN-M/maxresdefault.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "624e89f3c79c4eaebaa568ad"
+  },
+  "title": "คอร์สเรียนพื้นฐานภาษา PHP 👨‍💻💜",
+  "url": "https://www.youtube.com/embed/VFfqIGnhc7Y",
+  "description": "สมัครเป็นสมาชิกของช่องนี้เพื่อเข้าถึงสิทธิพิเศษต่างๆ\nhttps://www.youtube.com/channel/UCeKE...\n\nFollow & Contacts\n👓 FB : https://www.facebook.com/patiphanphen...\n🕶 FB (Fanpage) : https://www.facebook.com/patiphannn/\n📷 IG : https://www.instagram.com/ohmilerr/\n📧 Business : misterpatipan@gmail.com\n\nRuk-Com จดโดเมน-เช่าโฮสต์ ราคาประหยัด\n🔗 https://bit.ly/2yrLUgQ\n\nCourse Online คอร์สเรียนออนไลน์\n🔗 https://milerdev.teachable.com/courses\n\nWebsite\n🏠 https://milerdev.com/\n\nDonate & Supporting me \n🙏🏻 KBANK กสิกร : 009-3-555-821 ปฏิภาณ เพ็งเภา\n🙏🏻 Paypal : misterpatipan@gmail.com\n\n#PatiphanPhengpao #MilerDev #PatiPhan\n\nTimestamps:\n0:00 - Introduction \n05:50 - Installing XAMPP\n10:03 - Installing VScode & Extensions\n12:04 - เริ่มต้นเขียน PHP\n18:00 - Case Sensitive\n22:36 - การ Comment ใน PHP\n24:55 - การประกาศตัวแปรใน PHP\n28:54 - รู้จักกับ Scope ใน PHP\n31:50 - การใช้งาน Global Keyword\n34:09 - การใช้งานคำสั่ง Echo & Print\n37:35 - ชนิดของข้อมูล Data Types\n42:42 - ชนิดข้อมูลแบบ Object\n44:50 - รู้จักกับ Constants ใน PHP\n48:01 - รู้จักกับ Array Contstants\n49:56 - PHP Operators\n59:07 - Spaceship Operators\n01:01:00 - Xor Operators\n01:02:34 - การรวม Arrays ด้วย Operators\n01:06:13 - เช็คเงื่อนไขด้วย if else statements\n01:08:24 - รู้จักกับ Switch Statement\n01:13:39 - รู้จักกับ While Loop\n01:17:13 - รู้จักกับ Do While Loop\n01:19:09 - รู้จักกับ For Loop\n01:21:13 - Foreach Loop\n01:25:55 - การสร้าง Function\n01:31:21 - เรื่องของ Arrays\n01:34:28 - รู้จักกับ Count ฟังก์ชั่นนับจำนวนข้อมูลใน Array\n01:35:30 - รู้จักชนิดของ Arrays Indexed Arrays\n01:40:15 - รู้จักกับ Associative Arrays\n01:44:11 - รู้จักกับ Multidimensional Arrays\n01:55:09 - รู้จักกับ Superglobal\n01:59:05 - การใช้ $_SERVER\n02:02:20 - การใช้ $_REQUEST\n02:05:56 - การใช้ $_GET\n02:11:07 - การใช้ $_POST\n02:12:19 - สรุปความแตกต่าง $_GET, $_POST, $_REQUEST\n02:13:24 - การใช้งาน include\n02:16:14 - การใช้งาน $_SESSION\n",
+  "img_url": "https://i.ytimg.com/vi/VFfqIGnhc7Y/maxresdefault.jpg",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "624e8dedc79c4eaebaa568b1"
+  },
+  "title": "PHP in 100 Seconds",
+  "url": "https://www.youtube.com/embed/a7_WFUlFS94",
+  "description": "PHP Hypertext Preprocessor is a scripting language for building dynamic websites on the server. It remains one of the most popular programming languages in the world, powering tools like Wordpress, Laravel, and Symfony. https://fireship.io\n",
+  "img_url": "https://i.ytimg.com/vi/a7_WFUlFS94/maxresdefault.jpg",
+  "__v": 0
+}]

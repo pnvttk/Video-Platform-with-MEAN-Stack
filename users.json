@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "624e87ac53e707dfe8161120"
+  },
+  "name": "jason",
+  "email": "jason@outlook.com",
+  "username": "jason",
+  "password": "$2a$10$Z6x3SfcJotcfoEZ8M1qryOhxiaJ8WRfeazzzdeGwhHPYjWwqmY7ji",
+  "permission": "ADMIN",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "624e8e0553e707dfe8161128"
+  },
+  "name": "user",
+  "email": "user@outlook.com",
+  "username": "user",
+  "password": "$2a$10$yK1gWuZLNvUmo12ULLncd.DpRzgkh68qMXTGoYrF6h7hOI.345pim",
+  "permission": "USER",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6256d6ca2343dea4a94c4071"
+  },
+  "name": "test",
+  "email": "test@test.com",
+  "username": "test",
+  "password": "$2a$10$CnnkjSKSexW5K.JftnS8mu.mpVRCEiD2nrtTgM./L.OhNMrolm2Pu",
+  "permission": "USER",
+  "__v": 0
+}]
