@@ -1,6 +1,7 @@
 # mean-vdo
-Y3T1 Web Application : Mean Stack Video Platform
-!Only work on local with mongoDB
+Y3T1 Web Application : Mean Stack Video Platform.
+
+Only work on local with mongoDB.
 ```
 cd angular,user,video
 ng serve
