@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Video } from '../video-request-get';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { VideoRequestGetComponent } from '../video-request-get.component';
 import { FormsModule } from '@angular/forms';
 import {InputTextareaModule} from 'primeng/inputtextarea';
@@ -17,10 +17,10 @@ export class UpdateComponent implements OnInit {
   // temp getId 
   getId: any
   // formproperty
-  updateForm: FormGroup
+  updateForm: UntypedFormGroup
 
   constructor(
-    public formBuilder: FormBuilder,
+    public formBuilder: UntypedFormBuilder,
     private router: Router,
     private ngZone: NgZone,
     private activatedRoute: ActivatedRoute,
