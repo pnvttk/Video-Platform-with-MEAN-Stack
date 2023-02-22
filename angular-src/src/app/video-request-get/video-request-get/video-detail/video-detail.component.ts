@@ -1,7 +1,7 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { Route, ActivatedRoute, Router } from '@angular/router';
 import { VideoRequestGetComponent } from 'src/app/video-request-get/video-request-get/video-request-get.component';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, UntypedFormBuilder } from '@angular/forms';
 
 import { Video } from '../video-request-get';
 import { Observable } from 'rxjs';
@@ -37,7 +37,7 @@ export class VideoDetailComponent implements OnInit {
   rpt: any
 
   constructor(
-    public formBuilder: FormBuilder,
+    public formBuilder: UntypedFormBuilder,
     private activatedRoute: ActivatedRoute,
     private videoRequest: VideoRequestGetComponent,
     private sanitizer: DomSanitizer,
