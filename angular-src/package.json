@@ -2,9 +2,10 @@
   "name": "angular-src",
   "version": "0.0.0",
   "scripts": {
+    "setup": "npm install --force && npm audit fix --force",
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
